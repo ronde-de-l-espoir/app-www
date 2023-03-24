@@ -10,6 +10,7 @@
 </head>
 <body>
     <main>
+        <h1>Connectez-vous</h1>
         <div id="con-box">
             <input type="password" placeholder="Mot de passe" required id="pwd">
             <button id="btn" onclick="validate()">Connexion</button>
