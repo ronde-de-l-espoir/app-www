@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+}
+
+main {
+    background-color: #0099D7;
+    height: 100vh;
+}
+
+#con-box {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+}
+
+#btn {
+    margin-top: 17px;
+    width: 50%;
+    height: 50px;
+    font-size: large;
+    background-color: #00587a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
