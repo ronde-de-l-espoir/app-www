@@ -21,7 +21,7 @@
 <body>
     <main>
         <h1>Connectez-vous</h1>
-        <form id="con-box" method="POST" action="index.php">
+        <form id="con-box" method="POST" action="login.php">
             <input type="password" placeholder="Mot de passe" required id="pwd" name="pwd">
             <button type="submit" id="btn" name="submit">Connexion</button>
         </form>
