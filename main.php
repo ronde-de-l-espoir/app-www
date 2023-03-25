@@ -40,7 +40,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,13 +58,13 @@
         </div>
         <div class="form-element">
             <label for="moyen" class="main-label">Moyen de paiement</label>
-            <label><input type="radio" name="moyen" value="especes">Espèces</label>
-            <label><input type="radio" name="moyen" value="cheque">Chèque</label>
+            <label><input type="radio" name="moyen" value="especes" required>Espèces</label>
+            <label><input type="radio" name="moyen" value="cheque" required>Chèque</label>
         </div>
         <div class="form-element" style="margin-bottom: 0;">
             <label for="montant" class="main-label">Montant</label>
-            <label>La personne donne : <input type="number" name="montant" min="0.1" id="montant-1"> €</label>
-            <label style="padding-bottom: 3px;">Confirmez : <input type="number" name="montant" min="0.1" id="montant-2" oninput="checkSame()"> €</label>
+            <label>La personne donne : <input type="number" name="montant" min="0.1" id="montant-1" required> €</label>
+            <label style="padding-bottom: 3px;">Confirmez : <input type="number" name="montant" min="0.1" id="montant-2" oninput="checkSame()" required> €</label>
             <p id="error-text" class="hidden">Les montants ne correspondent pas</p>
         </div>
         <div class="form-element" id="final-btns">
