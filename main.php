@@ -33,7 +33,7 @@
             if (!mysqli_query($conn, $sql)) {
                 echo "Query error: " .mysqli_error($conn);
             } else {
-                $dbSuccess = true;
+                header('Location: ./success.php');
             }
         }
     }
