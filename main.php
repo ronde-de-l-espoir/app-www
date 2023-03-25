@@ -15,11 +15,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
     <title>Ajouter un paiement</title>
 </head>
 <body>
-    <main>
-        
-    </main>
+    <h1>Veuillez compléter le formulaire</h1>
+    <form>
+        <div class="form-element">
+            <label for="type" class="main-label">Type de rentrée de fonds</label>
+            <label><input type="radio" name="type" value="don">Don en espèces</label>
+            <label><input type="radio" name="type" value="vente">Vente</label>
+        </div>
+    </form>
 </body>
 </html>
