@@ -31,11 +31,19 @@
             <label><input type="radio" name="moyen" value="don">Espèces</label>
             <label><input type="radio" name="moyen" value="vente">Chèque</label>
         </div>
-        <div class="form-element">
+        <div class="form-element" style="margin-bottom: 0;">
             <label for="montant" class="main-label">Montant</label>
             <label>La personne donne : <input type="number" name="montant" min="0.1" id="montant-1"> €</label>
             <label style="padding-bottom: 3px;">Confirmez : <input type="number" name="montant" min="0.1" id="montant-2" oninput="checkSame()"> €</label>
             <p id="error-text" class="hidden">Les montants ne correspondent pas</p>
+        </div>
+        <div class="form-element" id="final-btns">
+            <div class="btn-div">
+                <button type="submit" name="annuler" id="annuler">Annuler</button>
+            </div>
+            <div class="btn-div">
+                <button type="submit" name="valider" id="valider">Valider</button>
+            </div>
         </div>
     </form>
     <script src="./main.js"></script>

@@ -77,3 +77,35 @@ input[type=number] {
 .hidden {
     visibility: hidden;
 }
+
+#final-btns {
+    background-color: unset;
+    border: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.btn-div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 80%;
+    height: 50px;
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#annuler {
+    background-color: rgb(190 0 0);
+}
+
+#valider {
+    background-color: rgb(0 190 0);
+}
