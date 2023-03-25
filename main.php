@@ -23,8 +23,18 @@
     <form>
         <div class="form-element">
             <label for="type" class="main-label">Type de rentrée de fonds</label>
-            <label><input type="radio" name="type" value="don">Don en espèces</label>
+            <label><input type="radio" name="type" value="don">Don</label>
             <label><input type="radio" name="type" value="vente">Vente</label>
+        </div>
+        <div class="form-element">
+            <label for="moyen" class="main-label">Moyen de paiement</label>
+            <label><input type="radio" name="moyen" value="don">Espèces</label>
+            <label><input type="radio" name="moyen" value="vente">Chèque</label>
+        </div>
+        <div class="form-element">
+            <label for="montant" class="main-label">Montant</label>
+            <label>La personne donne : <input type="number" name="montant" min="0.1" id="montant-1"> €</label>
+            <label>Confirmez : <input type="number" name="montant" min="0.1" id="montant-2"> €</label>
         </div>
     </form>
 </body>
