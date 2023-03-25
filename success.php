@@ -20,7 +20,7 @@
         <h1>Succès !</h1>
         <form id="center-box" method="POST" action="login.php">
             <p>Le paiement a bien été enregistré !</p>
-            <button onclick="window.location('./main.php')" id="btn" style="width: 90%;">Retour au formulaire</button>
+            <button onclick="window.location('./main.php')" class="btn" style="width: 90%;">Retour au formulaire</button>
         </form>
     </main>
 </body>

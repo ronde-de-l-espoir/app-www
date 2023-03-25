@@ -31,7 +31,7 @@
         <h1>Connectez-vous</h1>
         <form id="center-box" method="POST" action="login.php">
             <input type="password" placeholder="Mot de passe" required id="pwd" name="pwd">
-            <button type="submit" id="btn" name="submit">Connexion</button>
+            <button type="submit" class="btn" name="submit">Connexion</button>
         </form>
     </main>
 </body>
