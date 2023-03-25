@@ -38,10 +38,10 @@
             <p id="error-text" class="hidden">Les montants ne correspondent pas</p>
         </div>
         <div class="form-element" id="final-btns">
-            <div class="btn-div">
+            <div class="btn-div" style="justify-content: flex-start;">
                 <button type="submit" name="annuler" id="annuler">Annuler</button>
             </div>
-            <div class="btn-div">
+            <div class="btn-div" style="justify-content: flex-end;">
                 <button type="submit" name="valider" id="valider">Valider</button>
             </div>
         </div>
