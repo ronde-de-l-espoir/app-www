@@ -102,6 +102,10 @@ button {
     border-radius: 4px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 #annuler {
     background-color: rgb(190 0 0);
 }
