@@ -50,11 +50,11 @@
 </head>
 <body>
     <h1>Veuillez compléter le formulaire</h1>
-    <form action="./main.php" method="post">
+    <form action="./main.php" method="post" onformchange="activateSubmit()">
         <div class="form-element">
             <label for="type" class="main-label">Type de rentrée de fonds</label>
-            <label><input type="radio" name="type" value="don">Don</label>
-            <label><input type="radio" name="type" value="vente">Vente</label>
+            <label><input type="radio" name="type" value="don" required>Don</label>
+            <label><input type="radio" name="type" value="vente" required>Vente</label>
         </div>
         <div class="form-element">
             <label for="moyen" class="main-label">Moyen de paiement</label>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-element" id="final-btns">
             <div class="btn-div" style="justify-content: flex-start;">
-                <button type="submit" name="annuler" id="annuler">Annuler</button>
+                <button type="reset" name="annuler" id="annuler">Effacer tout</button>
             </div>
             <div class="btn-div" style="justify-content: flex-end;">
                 <button type="submit" name="valider" id="valider">Valider</button>
