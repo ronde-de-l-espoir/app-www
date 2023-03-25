@@ -9,9 +9,7 @@
     require('../db_config.php');
 
     if (isset($_POST)){
-        if (isset($_POST['annuler'])){
-            header('Location: ./login.php');
-        } elseif (isset($_POST['valider'])) {
+        if (isset($_POST['valider'])) {
             $isAnonymous = true;
             if ($_POST['type'] == 'don'){
                 $isDonSimple = true;
