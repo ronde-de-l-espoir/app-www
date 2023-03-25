@@ -66,11 +66,12 @@ input[type=number] {
 }
 
 #error-text {
-    color: red;
+    color: rgb(190 0 0);
     font-style: italic;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 16px;
     margin: 0;
+    text-align: right;
 }
 
 .hidden {
