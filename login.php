@@ -1,12 +1,10 @@
 <?php
-
     require('../db_config.php');
     if (isset($_POST['submit'])) {
         if ($_POST['pwd'] == $appPWd){
             header('Location: ./main.php');
         }
     }
-
 ?>
 
 
