@@ -63,8 +63,8 @@
         </div>
         <div class="form-element" style="margin-bottom: 0;">
             <label for="montant" class="main-label">Montant</label>
-            <label>La personne donne : <input type="number" name="montant" min="0.1" id="montant-1" required> €</label>
-            <label style="padding-bottom: 3px;">Confirmez : <input type="number" name="montant" min="0.1" id="montant-2" oninput="checkSame()" required> €</label>
+            <label>La personne donne : <input type="number" name="montant" id="montant-1" required step=".01"> €</label>
+            <label style="padding-bottom: 3px;">Confirmez : <input type="number" name="montant" id="montant-2" oninput="checkSame()" required step=".01"> €</label>
             <p id="error-text" class="hidden">Les montants ne correspondent pas</p>
         </div>
         <div class="form-element" id="final-btns">
