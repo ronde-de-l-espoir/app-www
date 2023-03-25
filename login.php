@@ -1,9 +1,16 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     require('../db_config.php');
     if (isset($_POST['submit'])) {
         if ($_POST['pwd'] == $appPWd){
+            $_SESSION['connected'] = true;
             header('Location: ./main.php');
         }
+    } elseif (isset($_SESSION['connected'])){
+        header('Location: ./main.php');
     }
 ?>
 

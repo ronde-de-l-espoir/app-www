@@ -1,4 +1,11 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!(isset($_SESSION['connected']))){
+        header('Location: ./login.php');
+    }
     require('../db_config.php');
 ?>
 
