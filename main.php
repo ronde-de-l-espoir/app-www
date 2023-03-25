@@ -34,8 +34,10 @@
         <div class="form-element">
             <label for="montant" class="main-label">Montant</label>
             <label>La personne donne : <input type="number" name="montant" min="0.1" id="montant-1"> €</label>
-            <label>Confirmez : <input type="number" name="montant" min="0.1" id="montant-2"> €</label>
+            <label>Confirmez : <input type="number" name="montant" min="0.1" id="montant-2" oninput="checkSame()"> €</label>
+            <p id="error-text" class="hidden">Les montants ne correspondent pas</p>
         </div>
     </form>
+    <script src="./main.js"></script>
 </body>
 </html>
