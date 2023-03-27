@@ -113,3 +113,7 @@ button:hover {
 #valider {
     background-color: rgb(0 190 0);
 }
+
+#valider:disabled {
+    background-color: grey;
+}
