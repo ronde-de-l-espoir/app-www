@@ -16,5 +16,21 @@
 </head>
 <body>
     
+    <header>
+        <h2>Méthode de recherche</h2>
+    </header>
+
+    <main>
+        <div id="scan-option">
+            <img src="../img/qr-code-icon.png" alt="qr code icon">
+            <p><b>Scanner</b> un QR code.</p>
+        </div>
+        <div id="manual-option">
+            <img src="../img/search-icon.png" alt="search icon">
+            <p>Rechercher <b>manuellement</b> le numéro d'identification.</p>
+        </div>
+    </main>
+
+
 </body>
 </html>
