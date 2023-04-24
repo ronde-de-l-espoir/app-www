@@ -5,7 +5,7 @@
     }
 
     if (!(isset($_SESSION['connected']))){
-        header('Location: ../login/login.php');
+        header('Location: ./login/login.php');
     }
     require('../db_config.php');
 
@@ -45,5 +45,9 @@
         </div>
 
     </main>
+
+    <div class="sign-out" onclick="window.location = './reinit.php'">
+        <img src="./img/sign-out.png" alt="sign-out">
+    </div>
 </body>
 </html>
