@@ -23,7 +23,7 @@
 <body>
     
     <header>
-        <h1>Hub</h1>
+        <h1>Ronde de l'Espoir</h1>
     </header>
 
     <main>
