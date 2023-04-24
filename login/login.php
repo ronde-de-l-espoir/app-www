@@ -7,10 +7,10 @@
     if (isset($_POST['submit'])) {
         if ($_POST['pwd'] == $appPWd){
             $_SESSION['connected'] = true;
-            header('Location: ../money-form/main.php');
+            header('Location: ../hub.php');
         }
     } elseif (isset($_SESSION['connected'])){
-        header('Location: ../money-form/main.php');
+        header('Location: ../hub.php');
     }
 ?>
 
@@ -22,6 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../common.css">
     <!-- <script src="./app.js"></script> -->
     <title>Ajouter un paiement</title>
 </head>
