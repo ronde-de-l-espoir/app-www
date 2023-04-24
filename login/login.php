@@ -7,10 +7,10 @@
     if (isset($_POST['submit'])) {
         if ($_POST['pwd'] == $appPWd){
             $_SESSION['connected'] = true;
-            header('Location: ./main.php');
+            header('Location: ../money-form/main.php');
         }
     } elseif (isset($_SESSION['connected'])){
-        header('Location: ./main.php');
+        header('Location: ../money-form/main.php');
     }
 ?>
 

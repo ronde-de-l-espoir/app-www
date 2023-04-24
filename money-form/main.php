@@ -4,9 +4,9 @@
     }
 
     if (!(isset($_SESSION['connected']))){
-        header('Location: ./login.php');
+        header('Location: ../login/login.php');
     }
-    require('../db_config.php');
+    require('../../db_config.php');
 
     if (isset($_POST)){
         if (isset($_POST['valider'])) {
