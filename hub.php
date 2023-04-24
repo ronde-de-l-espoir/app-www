@@ -18,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="hub.css">
+    <link rel="stylesheet" href="root.css">
     <script src="./hub.js" defer></script>
     <title>Hub</title>
 </head>
@@ -37,7 +38,7 @@
             </div>
         </div>
 
-        <div class="option" data-link="gala-scanner">
+        <div class="option" data-link="gala-scanner/how-to.php">
             <img src="./img/scanner-animated.gif" alt="icon">
             <div class="option-text">
                 <h3>Scanner de tickets</h3>
