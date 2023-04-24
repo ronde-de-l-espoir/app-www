@@ -31,6 +31,9 @@
         </div>
     </main>
 
+    <div class="return" onclick="window.location = '../hub.php'">
+        <img src="../img/return-icon.png" alt="retour">
+    </div>
 
 </body>
 </html>
