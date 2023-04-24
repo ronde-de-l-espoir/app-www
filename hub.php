@@ -18,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="hub.css">
+    <script src="./hub.js" defer></script>
     <title>Hub</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
 
     <main>
 
-        <div class="option" id="money-form">
+        <div class="option" data-link="money-form/main.php">
             <img src="./img/form-icon.png" alt="icon">
             <div class="option-text">
                 <h3>Entrées d'argent</h3>
@@ -36,7 +37,7 @@
             </div>
         </div>
 
-        <div class="option" id="gala-scanner">
+        <div class="option" data-link="gala-scanner">
             <img src="./img/scanner-animated.gif" alt="icon">
             <div class="option-text">
                 <h3>Scanner de tickets</h3>
