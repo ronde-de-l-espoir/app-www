@@ -25,7 +25,11 @@
 
         <section class="results-wrapper">
             
-            <div class="result"></div>
+            <div class="result">
+                <div class="code-display"></div>
+                <div class="separation"></div>
+                <div class="more-infos"></div>
+            </div>
 
         </section>
 
