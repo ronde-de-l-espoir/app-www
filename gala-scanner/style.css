@@ -52,6 +52,7 @@ main {
     color: #ddd;
     padding: 16px 18px;
     display: flex;
+    align-items: center;
 }
 
 #manual-option img {
