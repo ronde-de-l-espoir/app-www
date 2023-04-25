@@ -21,11 +21,11 @@
     </header>
 
     <main>
-        <div id="scan-option">
+        <div id="scan-option" class="option">
             <img src="../img/qr-code-icon.png" alt="qr code icon">
             <p><b>Scanner</b> un QR code.</p>
         </div>
-        <div id="manual-option">
+        <div id="manual-option" class="option">
             <img src="../img/search-icon.png" alt="search icon">
             <p>Rechercher <b>manuellement</b> le numéro d'identification.</p>
         </div>
