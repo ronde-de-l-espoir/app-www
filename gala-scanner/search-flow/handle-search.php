@@ -7,7 +7,7 @@
         $id = mysqli_real_escape_string($conn, $_GET['id']);
 
         // make sql
-        $sql = "SELECT * FROM `preinscriptions` WHERE uuid LIKE '017%'";
+        $sql = "SELECT * FROM `preinscriptions` WHERE uuid LIKE '$id%'";
 
         // get the query results
         $result = mysqli_query($conn, $sql);
