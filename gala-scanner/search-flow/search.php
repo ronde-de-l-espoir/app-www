@@ -1,6 +1,6 @@
 <?php
 
-    require('../../config/db_relay.php');
+    require('../../config/db_config.php');
 
 ?>
 
@@ -16,5 +16,14 @@
 </head>
 <body>
     
+    <main>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Chercher un numéro...">
+            <img src="../../img/search-icon.png" alt="search-icon">
+        </div>
+
+    </main>
+
 </body>
 </html>
