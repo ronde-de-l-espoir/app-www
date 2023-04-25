@@ -19,7 +19,7 @@
     <main>
 
         <div class="search-bar">
-            <input type="text" placeholder="Chercher un numéro...">
+            <input type="search" placeholder="Chercher un numéro...">
             <img src="../../img/search-icon.png" alt="search-icon">
         </div>
 
