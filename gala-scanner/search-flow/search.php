@@ -23,8 +23,10 @@
             <img src="../../img/search-icon.png" alt="search-icon">
         </div>
 
-        <section class="result">
+        <section class="results-wrapper">
             
+            <div class="result"></div>
+
         </section>
 
     </main>
