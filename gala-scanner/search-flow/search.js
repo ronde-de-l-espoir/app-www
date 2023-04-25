@@ -35,7 +35,7 @@ function displaySearchResults(data) {
                 // do something here
             }
 
-            const paymentIconPath = '../../img/payment-icon.png';
+            let paymentIconPath = '../../img/payment-icon.png';
             if (data[i]['hasPaid'] == 1) {
                 paymentIconPath = '../../img/already-paid-icon.png';
             }
