@@ -25,7 +25,8 @@ main {
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 5px 16px 8px;
+    padding: 5px 16px 6px;
+    box-shadow: 0 4px 2px -2px;
 }
 
 .search-bar input {
@@ -44,7 +45,7 @@ main {
 
 .search-bar img {
     position: absolute;
-    right: 10px;
-    width: 36px;
-    height: 36px;
+    right: 13px;
+    width: 30px;
+    height: 30px;
 }
