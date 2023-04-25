@@ -24,33 +24,26 @@
         </div>
 
         <section class="results-wrapper">
-            
             <div class="result">
                 <div class="code-display">
                     <p>01752</p>
                     <p>1348</p>
                 </div>
-
                 <div class="more-infos">
-
                     <div id="id-display">
-                        <p>
-                            <span id="fname">Jonathan</span>
-                            <span id="lname">ARCHER</span>
-                            -
-                            <span id="age">49 ans</span>
-                        </p>
+                        <p><span id="fname">Jonathan</span>
+                        <span id="lname">ARCHER</span></p>
                     </div>
-
                     <div class="various-infos">
-
-                        
-
-                        <div class="info-icon already-used">
-                            <img src="" alt="icon">
+                        <div class="wrapper">
+                            <img class="info-icon" src="../../img/payment-icon.png" alt="icon">
+                            <div class="children">
+                                <p id="childrenAmount">2</p>
+                                <img class="info-icon" src="../../img/person-icon.png" alt="icon">
+                            </div>
                         </div>
+                        <img class="info-icon" src="../../img/open-icon.png" alt="icon">
                     </div>
-
                 </div>
             </div>
 
