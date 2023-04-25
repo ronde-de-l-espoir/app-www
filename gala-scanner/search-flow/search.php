@@ -26,9 +26,32 @@
         <section class="results-wrapper">
             
             <div class="result">
-                <div class="code-display"></div>
-                <div class="separation"></div>
-                <div class="more-infos"></div>
+                <div class="code-display">
+                    <p>01752</p>
+                    <p>1348</p>
+                </div>
+
+                <div class="more-infos">
+
+                    <div id="id-display">
+                        <p>
+                            <span id="fname">Jonathan</span>
+                            <span id="lname">ARCHER</span>
+                            -
+                            <span id="age">49 ans</span>
+                        </p>
+                    </div>
+
+                    <div class="various-infos">
+
+                        
+
+                        <div class="info-icon already-used">
+                            <img src="" alt="icon">
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </section>
