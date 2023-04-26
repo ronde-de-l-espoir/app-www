@@ -2,6 +2,7 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+    header('Location: ../hub.php');
 
     require('../../db_config.php');
     if (isset($_POST['submit'])) {
