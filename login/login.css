@@ -30,8 +30,9 @@ main {
 }
 
 .top-icon {
-    width: 45vw;
-    height: 45vw;
+    --size: 50vw;
+    width: var(--size);
+    height: var(--size);
 }
 
 .top-icon img {
@@ -78,4 +79,12 @@ form {
     /* font-size: ; */
     text-align: right;
     width: 63%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--lighter-blue) inset !important;
+    color: white;
 }
