@@ -36,20 +36,24 @@
         <form action="login.php" method="POST" autocomplete="off">
             <div class="field">
                 <img src="../img/account-icon.png" alt="icon">
-                <input type="text" name="identification" placeholder="">
+                <input type="text" name="identification" placeholder="Identifiant">
             </div>
 
             <div class="field">
                 <img src="../img/password-icon.png" alt="icon">
-                <input type="password" name="pwd" placeholder="">
+                <input type="password" name="pwd" placeholder="Mot de passe">
             </div>
 
-            <input type="submit" name="submit" value="submit">
+            <div class="trouble-manager">
+                <p><i>Identifiants oubliés ?</i></p>
+            </div>
+
+            <div class="field connection-field">
+                <img src="../img/log-in-icon.png" alt="icon">
+                <input type="submit" name="submit" value="Se Connecter">
+            </div>
+
         </form>
-        <div class="trouble-manager">
-            <p><i>Identifiants oubliés ?</i></p>
-        </div>
-        
     </main>
 
 </body>
