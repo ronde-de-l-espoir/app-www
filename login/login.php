@@ -2,9 +2,6 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    
-    // $_POST['pwd'] = 'LRDE2023';
-    $_POST['submit'] = 'Log In';
 
     require('../../db_config.php');
     if (isset($_POST['submit'])) {
@@ -39,12 +36,12 @@
         <form action="login.php" method="POST" autocomplete="off">
             <div class="field">
                 <img src="../img/account-icon.png" alt="icon">
-                <input type="text">
+                <input type="text" name="identification" placeholder="">
             </div>
 
             <div class="field">
                 <img src="../img/password-icon.png" alt="icon">
-                <input type="password">
+                <input type="password" name="pwd" placeholder="">
             </div>
 
             <input type="submit" name="submit" value="submit">
