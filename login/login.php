@@ -33,15 +33,15 @@
             <img src="../img/lrde-icon.png" alt="icon">
         </div>
 
-        <form action="login.php" method="POST">
+        <form action="login.php" method="POST" autocomplete="off">
             <div class="field">
                 <img src="../img/account-icon.png" alt="icon">
-                <input type="text" autocomplete="off">
+                <input type="text">
             </div>
 
             <div class="field">
                 <img src="../img/password-icon.png" alt="icon">
-                <input type="password" autocomplete="off">
+                <input type="password">
             </div>
         </form>
         <div class="trouble-manager">
