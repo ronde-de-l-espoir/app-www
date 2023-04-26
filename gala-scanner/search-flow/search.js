@@ -25,7 +25,7 @@ function displaySearchResults(data) {
         return 0;
     } else {
         for (let i = 0; i < data.length; i++) {
-            const uuid = data[i]['uuid'];
+            const id = data[i]['id'];
             const fname = data[i]['fname'];
             const lname = data[i]['lname'];
 
@@ -40,7 +40,7 @@ function displaySearchResults(data) {
                 paymentIconPath = '../../img/already-paid-icon.png';
             }
 
-            const html = createHTMLResult(uuid, fname, lname, childrenAmount, paymentIconPath)
+            const html = createHTMLResult(id, fname, lname, childrenAmount, paymentIconPath)
             const resultSection = document.querySelectorAll('.results-wrapper')[0];
             
             resultSection.insertAdjacentHTML('afterbegin', html)
@@ -48,24 +48,24 @@ function displaySearchResults(data) {
     }
 }
 
-function createHTMLResult(uuid, fname, lname, childrenAmount, paymentIconPath) {
+function createHTMLResult(id, fname, lname, childrenAmount, paymentIconPath) {
     
-    const digits = uuid.split();
-    let uuidFirst = '';
-    let uuidSecond = '';
-    for (let i = 0; i < uuid.length; i++) {
-        if (uuidFirst.length < 5) {
-            uuidFirst += uuid[i];
+    const digits = id.split();
+    let idFirst = '';
+    let idSecond = '';
+    for (let i = 0; i < id.length; i++) {
+        if (idFirst.length < 5) {
+            idFirst += id[i];
         } else {
-            uuidSecond += uuid[i];
+            idSecond += id[i];
         }
     }
 
     let html = `
     <div class="result">
             <div class="code-display">
-                <p>${uuidFirst}</p>
-                <p>${uuidSecond}</p>
+                <p>${idFirst}</p>
+                <p>${idSecond}</p>
             </div>
             <div class="more-infos">
                 <div id="id-display">

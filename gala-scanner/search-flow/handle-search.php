@@ -7,7 +7,7 @@
         $id = mysqli_real_escape_string($conn, $_GET['id']);
 
         // make sql
-        $sql = "SELECT * FROM `preinscriptions` WHERE uuid LIKE '$id%'";
+        $sql = "SELECT * FROM `preinscriptions` WHERE id LIKE '$id%'";
 
         // get the query results
         $result = mysqli_query($conn, $sql);
@@ -23,7 +23,7 @@
         $i = 0;
         while ($row = mysqli_fetch_assoc($result)) {
             $array = [
-                'uuid'=>$row['uuid'],
+                'id'=>$row['id'],
                 'fname'=>$row['fname'],
                 'lname'=>$row['lname'],
                 'age'=>$row['age'],
