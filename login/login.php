@@ -46,6 +46,8 @@
                 <img src="../img/password-icon.png" alt="icon">
                 <input type="password">
             </div>
+
+            <input type="submit" name="submit" value="submit">
         </form>
         <div class="trouble-manager">
             <p><i>Identifiants oubliés ?</i></p>
