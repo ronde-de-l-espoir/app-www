@@ -3,7 +3,7 @@
         session_start();
     }
     
-    $_POST['pwd'] = 'LRDE2023';
+    // $_POST['pwd'] = 'LRDE2023';
     $_POST['submit'] = 'Log In';
 
     require('../../db_config.php');
