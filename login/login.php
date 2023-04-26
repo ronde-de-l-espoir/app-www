@@ -4,6 +4,7 @@
     }
     
     $_POST['pwd'] = 'LRDE2023';
+    $_POST['submit'] = 'Log In';
 
     require('../../db_config.php');
     if (isset($_POST['submit'])) {
