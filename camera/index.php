@@ -21,9 +21,9 @@
                 video.play();
             };
         })
-        // .catch( () => {
-        //     alert('You have give browser the permission to run Webcam and mic ;( ');
-        // });
+        .catch( () => {
+            alert('You have give browser the permission to run Webcam and mic ;( ');
+        });
 
     </script>
 </body>
