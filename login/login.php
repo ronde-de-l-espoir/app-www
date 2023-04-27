@@ -4,13 +4,35 @@
     }
 
     require('../../db_config.php');
+
     if (isset($_POST['submit'])) {
-        if ($_POST['pwd'] == $appPWd){
-            $_SESSION['connected'] = true;
-            header('Location: ../hub.php');
+
+        if ($_POST['identifiant'] == '') {
+            $errors['identifiant'] = 'missing';
+        } else {
+            $identifiant = $_POST['identifiant'];
+            $sql = "SELECT * FROM staff WHERE identifiant = '$identifiant'";
+            $result = mysqli_query($conn, $sql);
+            $answer = mysqli_fetch_assoc($result);
+            if ($answer) {
+                print_r($answer);
+            } else {
+                echo 'Problem';
+            }
         }
-    } elseif (isset($_SESSION['connected'])){
-        header('Location: ../hub.php');
+
+        // if (!isset($_POST['pwd'])) {
+        //     $errors['pwd'] = 'missing';
+        // } else {
+            
+        // }
+        
+    //     if ($_POST['pwd'] == $appPWd){
+    //         $_SESSION['connected'] = true;
+    //         header('Location: ../hub.php');
+    //     }
+    // } elseif (isset($_SESSION['connected'])){
+    //     header('Location: ../hub.php');
     }
 ?>
 
@@ -36,7 +58,7 @@
         <form action="login.php" method="POST" autocomplete="off">
             <div class="field">
                 <img src="../img/account-icon.png" alt="icon">
-                <input type="text" name="identification" placeholder="Identifiant">
+                <input type="text" name="identifiant" placeholder="Identifiant">
             </div>
 
             <div class="field">
