@@ -81,6 +81,10 @@ form {
     width: 100%;
 }
 
+.trouble-manager:hover p {
+    text-decoration: underline;
+}
+
 input::placeholder {
     color: var(--font-fade);
 }
