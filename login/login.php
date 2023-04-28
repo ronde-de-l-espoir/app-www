@@ -8,7 +8,7 @@
     if (isset($_POST['submit'])) {
 
         if ($_POST['identifiant'] == '') {
-            $errors['identifiant'] = 'missing';
+            $errors['identifiant'] = "Vous devez rentrer un identifiant pour vous connecter à l'interface.";
         } else {
             $identifiant = $_POST['identifiant'];
             $sql = "SELECT * FROM staff WHERE identifiant = '$identifiant'";
@@ -19,29 +19,16 @@
                     if ($answer['pwd'] == $_POST['pwd']) {
                         $_SESSION['connected'] = true;
                         header('Location: ../hub.php');
+                    } else if ($_POST['pwd'] != '') {
+                        $errors['pwd'] = "Le mot de passe ne correspond pas à l'identifiant rentré.";
                     } else {
-                        $errors['pwd'] = 'Wrong password';
+                        $errors['pwd'] = "Vous devez rentrer le mot de passe associé à votre identifiant pour accéder à l'interface.";
                     }
-                } else {
-                    $errors['pwd'] = 'Need a password';
                 }
             } else {
-                $errors['identifiant'] = 'Wrong identification';
+                $errors['identifiant'] = "L'identifiant que vous avez rentré n'existe pas.";
             }
         }
-
-        // if (!isset($_POST['pwd'])) {
-        //     $errors['pwd'] = 'missing';
-        // } else {
-            
-        // }
-        
-    //     if ($_POST['pwd'] == $appPWd){
-    //         $_SESSION['connected'] = true;
-    //         header('Location: ../hub.php');
-    //     }
-    // } elseif (isset($_SESSION['connected'])){
-    //     header('Location: ../hub.php');
     }
 ?>
 
@@ -54,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./login.css">
     <link rel="stylesheet" href="../root.css">
-    <!-- <script src="./app.js"></script> -->
+    <script src="./login.js" defer></script>
     <title>Login</title>
 </head>
 <body>
@@ -85,6 +72,23 @@
             </div>
 
         </form>
+
+        <?php if (isset($errors)) { ?>
+
+        <div id="error-popup">
+            <img src="../img/close-icon.png" id="close-popup" alt="close">
+            <h3>Un problème est survenu.</h3>
+            <p>
+            <?php
+                if (isset($errors['identifiant'])) {
+                    echo $errors['identifiant'];
+                } else if (isset($errors['pwd'])) {
+                    echo $errors['pwd'];
+                }
+            ?>
+            </p>
+        </div>
+        <?php } ?>
     </main>
 
 </body>
