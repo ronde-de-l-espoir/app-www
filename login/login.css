@@ -114,3 +114,23 @@ input:-webkit-autofill:active{
     text-align: left;
     padding-bottom: 0;
 }
+
+
+#error-popup {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    background-color: goldenrod;
+    border-radius: 9px;
+    padding: 15px;
+}
+
+#error-popup img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 30px;
+    height: 30px;
+}
