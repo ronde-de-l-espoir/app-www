@@ -15,9 +15,18 @@
             $result = mysqli_query($conn, $sql);
             $answer = mysqli_fetch_assoc($result);
             if ($answer) {
-                print_r($answer);
+                if (isset($_POST['pwd'])) {
+                    if ($answer['pwd'] == $_POST['pwd']) {
+                        $_SESSION['connected'] = true;
+                        header('Location: ../hub.php');
+                    } else {
+                        $errors['pwd'] = 'Wrong password';
+                    }
+                } else {
+                    $errors['pwd'] = 'Need a password';
+                }
             } else {
-                echo 'Problem';
+                $errors['identifiant'] = 'Wrong identification';
             }
         }
 
