@@ -22,7 +22,10 @@
             };
         })
         .catch( () => {
-            alert('You have give browser the permission to run Webcam and mic ;( ');
+            // alert('You have give browser the permission to run Webcam and mic ;( ');
+            let alert = document.createElement('div');
+            alert.innerText = 'Dude come on give me permission';
+            document.querySelectorAll('body')[0].appendChild(alert);
         });
 
     </script>
