@@ -98,12 +98,15 @@ input:-webkit-autofill:active{
 }
 
 .connection-field {
+    display: flex;
+    justify-content: center;
     margin-top: 5px;
     background-color: #EEE;
     color: var(--deep-blue);
     width: 92%;
     border-radius: 50px;
     margin-inline: auto;
+    width: 200px;
 }
 
 .connection-field input {
