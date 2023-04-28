@@ -18,6 +18,7 @@
                 if (isset($_POST['pwd'])) {
                     if ($answer['pwd'] == $_POST['pwd']) {
                         $_SESSION['connected'] = true;
+                        $_SESSION['identifiant'] = $identifiant;
                         header('Location: ../hub.php');
                     } else if ($_POST['pwd'] != '') {
                         $errors['pwd'] = "Le mot de passe ne correspond pas à l'identifiant rentré.";
