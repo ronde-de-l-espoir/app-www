@@ -8,6 +8,12 @@
     <title>QR Scanner Test</title>
 </head>
 <body>
+
+<!-- 
+    https://scanapp.org/html5-qrcode-docs/docs/intro
+
+    lien pour la library que j'utilise
+-->
     
     <div id="reader" width="600px"></div>
 
