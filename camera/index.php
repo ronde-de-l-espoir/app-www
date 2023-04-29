@@ -11,11 +11,14 @@
     
     <div id="reader" width="600px"></div>
 
+    <div id="result"></div>
+
     <script src="./html5-qrcode.min.js" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
             console.log(`Code matched = ${decodedText}`, decodedResult);
+            document.getElementById('result').innerText = decodedText;
         }
 
         function onScanFailure(error) {
