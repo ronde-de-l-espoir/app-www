@@ -8,25 +8,40 @@
     
 </head>
 <body>
-    <video id="myVidPlayer" muted autoplay></video>
+    <video id="myVidPlayer preview" muted autoplay></video>
+    <script type="text/javascript" src="instascan.min.js"></script>
     <script type="text/javascript">
     //Selector for your <video> element
-    const video = document.getElementById('myVidPlayer');
+    // const video = document.getElementById('myVidPlayer');
 
     //Core
-    window.navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-            video.onloadedmetadata = (e) => {
-                video.play();
-            };
-        })
-        .catch( () => {
-            // alert('You have give browser the permission to run Webcam and mic ;( ');
-            let alert = document.createElement('div');
-            alert.innerText = 'Dude come on give me permission';
-            document.querySelectorAll('body')[0].appendChild(alert);
-        });
+    // window.navigator.mediaDevices.getUserMedia({ video: true })
+    //     .then(stream => {
+    //         video.srcObject = stream;
+    //         video.onloadedmetadata = (e) => {
+    //             video.play();
+    //         };
+    //     })
+    //     .catch( () => {
+    //         // alert('You have give browser the permission to run Webcam and mic ;( ');
+    //         let alert = document.createElement('div');
+    //         alert.innerText = 'Dude come on give me permission';
+    //         document.querySelectorAll('body')[0].appendChild(alert);
+    //     });
+
+    let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
 
     </script>
 </body>
