@@ -123,7 +123,7 @@
 
                     <div id="payment">
                         <div class="payment-method">
-                            <p>L'accompagnant paie pour tous :</p>
+                            <p>L'accompagnant a payé pour tous :</p>
                             <button class="confirm-payment">
                                 <img
                                     src="../../img/confirm-icon.png"
@@ -137,7 +137,7 @@
                         </div>
 
                         <div class="payment-method">
-                            <p>L'accompagnant paie <span class="nowrap">que pour lui :</span></p>
+                            <p>L'accompagnant a payé <span class="nowrap">que pour lui :</span></p>
                             <button class="confirm-payment">
                                 <img
                                     src="../../img/confirm-icon.png"
