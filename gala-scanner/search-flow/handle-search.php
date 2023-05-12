@@ -29,7 +29,7 @@
                 'age'=>$row['age'],
                 'price'=>$row['price'],
                 'hasPaid'=>$row['hasPaid'],
-                'hasChildren'=>$row['hasChildren']
+                'nChildren'=>$row['nChildren']
             ];
 
             $data[] = $array;

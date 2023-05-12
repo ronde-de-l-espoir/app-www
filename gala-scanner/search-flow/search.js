@@ -29,10 +29,9 @@ function displaySearchResults(data) {
             const fname = data[i]['fname'];
             const lname = data[i]['lname'];
 
-            const childrenAmount = 0;
-            if (data[i]['hasChildren'] == 1) {
-                console.log("It'll come");
-                // do something here
+            let childrenAmount = 0;
+            if (data[i]['nChildren'] > 0) {
+                childrenAmount = data[i]['nChildren'];
             }
 
             let paymentIconPath = '../../img/payment-icon.png';
