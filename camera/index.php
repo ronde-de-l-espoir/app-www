@@ -9,17 +9,18 @@
 </head>
 <body>
 
-<!-- 
-    https://scanapp.org/html5-qrcode-docs/docs/intro
+    <!-- 
+        https://scanapp.org/html5-qrcode-docs/docs/intro
 
-    lien pour la library que j'utilise
--->
+        lien pour la library que j'utilise
+    -->
     
     <div id="reader" width="600px"></div>
 
     <div id="result"></div>
 
-    <script src="./html5-qrcode.min.js" type="text/javascript"></script>
+    <!-- <script src="./html5-qrcode.min.js" type="text/javascript"></script> -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
