@@ -10,7 +10,9 @@
 </head>
 <body>
 
-    <div id="reader" width="600px"></div>
+    <div class="reader-wrapper">
+        <div id="reader" width="600px"></div>
+    </div>
 
     <div id="result"></div>
 
@@ -22,11 +24,12 @@
             console.log(`Code matched = ${decodedText}`, decodedResult);
             document.getElementById('result').innerText = decodedText;
         }
-
+        
         function onScanFailure(error) {
             // handle scan failure, usually better to ignore and keep scanning.
             // for example:
-            console.warn(`Code scan error = ${error}`);
+                console.warn(`Code scan error = ${error}`);
+                document.getElementById('result').innerText = "Error";
         }
 
         let html5QrcodeScanner = new Html5QrcodeScanner(
