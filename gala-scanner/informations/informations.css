@@ -166,9 +166,92 @@ header {
     margin-top: -3px;
 }
 
-.info-field .important-info {
+.important-info {
     color: cornflowerblue;
     font-size: 1.1rem;
     font-weight: 700;
+    white-space: nowrap;
+}
+
+
+#accounts {
+    width: 100%;
+    padding: 25px;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#owed {
+    display: flex;
+    justify-content: space-between;
+}
+
+.person-accountability {
+    width: 70px;
+    aspect-ratio: 1/1;
+    border-radius: 17px;
+    border: rgba(0,0,0,0.2) solid 3px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.person-accountability .important-info {
+    font-size: 1.5rem;
+}
+
+.person-accountability .icon {
+    width: 40px;
+    aspect-ratio: 1/1;
+}
+
+.person-accountability:first-child .icon {
+    width: 48px;
+}
+
+.person-accountability:first-child p {
+    margin-top: -3px;
+    margin-bottom: 3px;
+}
+
+#payment {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-method {
+    background-color: #DDD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 7px;
+}
+
+.payment-method p {
+    margin-top: -5px;
+    padding: 7px;
+    padding-right: 20px;
+}
+
+.payment-method .confirm-payment {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.payment-method .confirm-payment .icon-confirm {
+    width: 72px;
+    aspect-ratio: 1/1;
+}
+
+.nowrap {
     white-space: nowrap;
 }
