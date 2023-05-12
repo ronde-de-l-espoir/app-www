@@ -30,6 +30,7 @@
 
     <main>
 
+        <?php if ($_SESSION['canAddPayment']) : ?>
         <div class="option" data-link="money-form/main.php">
             <img src="./img/form-icon.png" alt="icon">
             <div class="option-text">
@@ -37,7 +38,9 @@
                 <p class="explanation">Formulaire pour toutes rentrées d'argent.</p>
             </div>
         </div>
+        <?php endif ?>
 
+        <?php if ($_SESSION['canScan']) : ?>
         <div class="option" data-link="gala-scanner/how-to.php">
             <img src="./img/scanner-animated.gif" alt="icon">
             <div class="option-text">
@@ -45,6 +48,7 @@
                 <p class="explanation">Scanner des tickets de gala.</p>
             </div>
         </div>
+        <?php endif ?>
 
     </main>
 
