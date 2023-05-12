@@ -30,7 +30,7 @@ function displaySearchResults(data) {
             const lname = data[i]['lname'];
 
             let childrenAmount = 0;
-            if (data[i]['nChildren'] > 0) {
+            if (data[i]['nChildren'] != 0) {
                 childrenAmount = data[i]['nChildren'];
             }
 
