@@ -10,6 +10,10 @@
 </head>
 <body>
 
+    <header>
+        <h2>Scanner un code</h2>
+    </header>
+
     <div class="reader-wrapper">
         <div id="reader" width="600px"></div>
     </div>
@@ -17,7 +21,7 @@
     <div id="result"></div>
 
     <!-- <script src="./html5-qrcode.min.js" type="text/javascript"></script> -->
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="../../lib/qrcode/html5-qrcode.min.js" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
