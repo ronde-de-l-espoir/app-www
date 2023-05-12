@@ -79,7 +79,7 @@ function createHTMLResult(id, fname, lname, childrenAmount, paymentIconPath) {
                             <img class="info-icon" src="../../img/person-icon.png" alt="icon">
                         </div>
                     </div>
-                    <img class="info-icon" src="../../img/open-icon.png" alt="icon">
+                    <img class="info-icon" src="../../img/open-icon.png" alt="icon" onclick="window.location='../informations/informations.php?id=${id}'">
                 </div>
             </div>
         </div>
