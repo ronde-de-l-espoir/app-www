@@ -21,6 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../root.css">
     <link rel="stylesheet" href="./informations.css">
+    <script src="./informations.js" defer></script>
     <title>Informations</title>
 </head>
 <body>
@@ -69,6 +70,7 @@
                 </section>
 
                 <section id="event">
+
                     <div class="info-field">
                         <?php if ($ans['event'] == 'Gala') : ?>
                             <img src="../../img/show-icon.png" class="info-icon" alt="Event Icon">
@@ -77,9 +79,76 @@
                         <?php endif; ?>
                         <p>Participe au <span class="important-info"><?php echo $ans['event'] ?>.</span></p>
                     </div>
-                    <div class="info-field">
-                        <img src="../../img/crowd-icon.png" class="info-icon" alt="Icon">
-                        <p>Est accompagné par <span class="important-info"><?php echo $ans['nChildren'] ?> personnes.</span></p>
+
+                    <?php if ($ans['nChildren'] > 0) : ?>
+                        <div class="info-field">
+                            <img src="../../img/crowd-icon.png" class="info-icon" alt="Icon">
+                            <p>Est accompagné par <span class="important-info"><?php echo $ans['nChildren'] ?> personne<?php if ($ans['nChildren'] > 1) echo "s"; ?>.</span></p>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($ans['parentNode'] != 0) : ?>
+                        <?php
+
+                            // do stuff here
+
+                        ?>
+
+                        <div class="info-field">
+                            <img src="../../img/parent-icon.png" class="info-icon" alt="Icon">
+                            <p>Accompagne <span class="important-info"><?php echo $ans['parentNode'] ?>.</span></p>
+                        </div>
+                    <?php endif; ?>
+                </section>
+
+                <section id="accounts">
+                    <div id="owed">
+                        <div class="person-accountability">
+                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
+                            <p><span class="important-info"><?php echo $ans['price'] ?>€</span></p>
+                        </div>
+                        <div class="person-accountability">
+                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
+                            <p><span class="important-info"><?php
+                                echo $ans['price']
+                            ?>€</span></p>
+                        </div>
+                        <div class="person-accountability">
+                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
+                            <p><span class="important-info"><?php
+                                echo $ans['price']
+                            ?>€</span></p>
+                        </div>
+                    </div>
+
+                    <div id="payment">
+                        <div class="payment-method">
+                            <p>L'accompagnant paie pour tous :</p>
+                            <button class="confirm-payment">
+                                <img
+                                    src="../../img/confirm-icon.png"
+                                    id="everyone"
+                                    class="icon-confirm"
+                                    onclick="handleConfirm('everyone')"
+                                    alt="Confirm"
+                                    data-confirmed="false"
+                                >
+                            </button>
+                        </div>
+
+                        <div class="payment-method">
+                            <p>L'accompagnant paie <span class="nowrap">que pour lui :</span></p>
+                            <button class="confirm-payment">
+                                <img
+                                    src="../../img/confirm-icon.png"
+                                    id="solo"
+                                    class="icon-confirm"
+                                    onclick="handleConfirm('solo')"
+                                    alt="Confirm"
+                                    data-confirmed="true"
+                                >
+                            </button>
+                        </div>
                     </div>
                 </section>
 
