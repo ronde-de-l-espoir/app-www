@@ -2,11 +2,9 @@ function handleConfirm(elemId) {
     const elem = document.getElementById(elemId)
 
     if (elem.getAttribute('data-confirmed') == 'false') {
-        console.log("Confirming")
         elem.setAttribute('src', "../../img/confirmed-icon.png")
         elem.setAttribute('data-confirmed', "true")
     } else {
-        console.log("Noped...")
         elem.setAttribute('src', "../../img/confirm-icon.png")
         elem.setAttribute('data-confirmed', "false")
     }
