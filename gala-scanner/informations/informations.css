@@ -255,6 +255,9 @@ header {
 .payment-method .price-display {
     text-align: center;
     padding-top: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 /* 
 .payment-method ul {
@@ -269,6 +272,24 @@ header {
     border: none;
     outline: none;
     background-color: transparent;
+    background-image: url('../../img/confirm-icon.png');
+    width: 72px;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    color: transparent;
+    margin: auto;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .payment-method .confirm-payment .icon-confirm {
