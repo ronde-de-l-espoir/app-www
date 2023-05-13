@@ -10,7 +10,7 @@
         $id = mysqli_real_escape_string($conn, $_GET['id']);
 
         // make sql
-        $sql = "SELECT * FROM `preinscriptions` WHERE parentNode LIKE '$id%'";
+        $sql = "SELECT * FROM `preinscriptions` WHERE parentNode = '$id'";
 
         // get the query results
         $result = mysqli_query($conn, $sql);

@@ -83,7 +83,13 @@
                     <?php if ($ans['nChildren'] > 0) : ?>
                         <div class="info-field">
                             <img src="../../img/crowd-icon.png" class="info-icon" alt="Icon">
-                            <p><span class="important-info"><?php echo $ans['nChildren'] ?> personne<?php if ($ans['nChildren'] > 1) echo "s sont dépendantes" ?></span> <?php if ($ans['nChildren'] == 1) echo "est dépendante" ?>.</p>
+                            <p>
+                                <span class="important-info">
+                                    <?php echo $ans['nChildren'] ?> personne<?php if ($ans['nChildren'] > 1) echo "s" ?>
+                                </span>
+                                <?php if ($ans['nChildren'] > 1) echo "sont dépendantes." ?>
+                                <?php if ($ans['nChildren'] == 1) echo "est dépendante." ?>
+                            </p>
                         </div>
                     <?php endif; ?>
 
@@ -109,17 +115,30 @@
                     <!-- ACCOUNTABILITY FOR ACCOMPANIED PEOPLE -->
 
                     <div id="owed">
+
+                        <div class="person-accountability">
+                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
+                            <p><?php echo $ans['fname'] ?></p>
+                            <p>
+                                <span class="important-info">
+                                    <?php echo $ans['price'] ?>€
+                                </span>
+                            </p>
+                        </div>
                         
                         <?php
-
                             ob_start(); // Start output buffering
                             include './fetchChildren.php'; // Include the first PHP file
                             $result = ob_get_clean(); // Capture the output of the first PHP file and store it in a variable
                             $result = json_decode($result, true);
 
+                            $totalPrice = $ans['price'];
+
                             for ($i = 0; $i < count($result); $i++) {
                                 $fname = $result[$i]['fname'];
                                 $price = $result[$i]['price'];
+
+                                $totalPrice += $price;
 
                                 echo "
                                 <div class='person-accountability'>
@@ -129,25 +148,18 @@
                                 </div>
                                 ";
                             }
-
                         ?>
 
 
-                        <!-- <div class="person-accountability">
-                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
-                            <p><span class="important-info"><?php echo $ans['price'] ?>€</span></p>
-                        </div>
-                        <div class="person-accountability">
-                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
-                            <p><span class="important-info"><?php
-                                echo $ans['price']
-                            ?>€</span></p>
-                        </div> -->
+
                     </div>
 
                     <div id="payment">
                         <div class="payment-method">
-                            <p>L'accompagnant a payé pour tous :</p>
+
+                            <p>L'accompagnant doit <span class="nowrap"> payer :</span></p>
+                            <p class="price-display"><span class="important-info bigger-font"><?php echo $totalPrice ?>€</span></p>
+                            
                             <button class="confirm-payment">
                                 <img
                                     src="../../img/confirm-icon.png"
@@ -158,9 +170,19 @@
                                     data-confirmed="false"
                                 >
                             </button>
+
+                            <!-- <p>L'accompagnant paie pour : <br></p> -->
+                            <!-- <ul>
+                                <li><span class="important-info"> - Lui-même</span></li>
+                                <li><span class="important-info"> - Jonathan</span></li>
+                                <li><span class="important-info"> - Jadzia</span></li>
+                                <li><span class="important-info"> - Tom</span></li>
+                            </ul> -->
+                            <!-- <p>L'accompagnant doit payer <span class="important-info bigger-font"><?php echo $totalPrice ?>€</span> </p> -->
+
                         </div>
 
-                        <div class="payment-method">
+                        <!-- <div class="payment-method">
                             <p>L'accompagnant a payé <span class="nowrap">que pour lui :</span></p>
                             <button class="confirm-payment">
                                 <img
@@ -171,7 +193,7 @@
                                     alt="Confirm"
                                     data-confirmed="true"
                                 >
-                            </button>
+                            </button> -->
                         </div>
                     </div>
 
