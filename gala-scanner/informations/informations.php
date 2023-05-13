@@ -107,12 +107,6 @@
                             <img src="../../img/parent-icon.png" class="info-icon" alt="Icon">
                             <p>Dépend de <span class="important-info"><?php
                                 echo $parentAns['fname'];
-                                // $id = $parentAns['id'];
-                                // $dependanceSql = "SELECT fname FROM preinscriptions WHERE id = '$id'";
-                                // $dependanceRes = mysqli_query($conn, $dependanceSql);
-                                // $dependanceAns = mysqli_fetch_assoc($dependanceRes);
-                                
-                                // echo $dependanceAns['fname'];
                             ?>.</span></p>
                         </div>
                     <?php endif; ?>
@@ -129,7 +123,7 @@
                             data-id='<?php echo $ans['id'] ?>'
                             data-price='<?php echo $ans['price'] ?>'
                             data-hasPaid='<?php echo $ans['hasPaid'] ?>'
-                            data-isSelected='1'
+                            data-isSelected='<?php if ($ans['hasPaid'] != 1) echo 1; else echo 0; ?>'
                         >
                             <img src="<?php
                                 if ($ans['hasPaid']) {
