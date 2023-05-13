@@ -105,8 +105,35 @@
                 </section>
 
                 <section id="accounts">
+                    <?php if ($ans['nChildren'] > 0) : ?>
+                    <!-- ACCOUNTABILITY FOR ACCOMPANIED PEOPLE -->
+
                     <div id="owed">
-                        <div class="person-accountability">
+                        
+                        <?php
+
+                            ob_start(); // Start output buffering
+                            include './fetchChildren.php'; // Include the first PHP file
+                            $result = ob_get_clean(); // Capture the output of the first PHP file and store it in a variable
+                            $result = json_decode($result, true);
+
+                            for ($i = 0; $i < count($result); $i++) {
+                                $fname = $result[$i]['fname'];
+                                $price = $result[$i]['price'];
+
+                                echo "
+                                <div class='person-accountability'>
+                                    <img src='../../img/person-icon.png' alt='Icon' class='icon'>
+                                    <p>$fname</p>
+                                    <p><span class='important-info'>$price</span><span class='important-info'>€</span></p>
+                                </div>
+                                ";
+                            }
+
+                        ?>
+
+
+                        <!-- <div class="person-accountability">
                             <img src="../../img/person-icon.png" alt="Icon" class="icon">
                             <p><span class="important-info"><?php echo $ans['price'] ?>€</span></p>
                         </div>
@@ -115,13 +142,7 @@
                             <p><span class="important-info"><?php
                                 echo $ans['price']
                             ?>€</span></p>
-                        </div>
-                        <div class="person-accountability">
-                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
-                            <p><span class="important-info"><?php
-                                echo $ans['price']
-                            ?>€</span></p>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div id="payment">
@@ -153,6 +174,12 @@
                             </button>
                         </div>
                     </div>
+
+                <?php else : ?>
+
+
+                    
+                <?php endif; ?>
                 </section>
 
             </div>
