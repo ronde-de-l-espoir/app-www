@@ -65,8 +65,10 @@ header {
 /** FICHE'S CSS **/
 .fiche {
     width: 100%;
+    max-width: 440px;
     padding: 30px 20px;
     min-height: 500px;
+    margin: auto;
 }
 
 .main-wrapper {
@@ -244,6 +246,7 @@ header {
     padding-right: 20px;
     font-weight: 600;
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .payment-method p:first-child {
