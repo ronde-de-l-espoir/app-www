@@ -132,9 +132,7 @@
                             ?>" alt="Icon" class="icon">
                             <p><?php echo $ans['fname'] ?></p>
                             <p>
-                                <span class="important-info">
-                                    <?php echo $ans['price'] ?>€
-                                </span>
+                                <span class="important-info card-price"><?php echo $ans['price'] ?></span><span class="important-info">€</span>
                             </p>
                         </div>
                         
@@ -143,8 +141,6 @@
                             include './fetchChildren.php'; // Include the first PHP file
                             $result = ob_get_clean(); // Capture the output of the first PHP file and store it in a variable
                             $result = json_decode($result, true);
-
-                            $totalPrice = $ans['price'];
 
                             for ($i = 0; $i < count($result); $i++) {
                                 $fname = $result[$i]['fname'];
@@ -156,13 +152,11 @@
                                     $url = '../../img/person-paid-icon.png';
                                 }
 
-                                $totalPrice += $price;
-
                                 echo "
                                 <div class='person-accountability' data-id='$id' data-price='$price' data-hasPaid='$hasPaid' data-isSelected='0'>
                                     <img src='$url' alt='Icon' class='icon'>
                                     <p>$fname</p>
-                                    <p><span class='important-info'>$price</span><span class='important-info'>€</span></p>
+                                    <p><span class='important-info card-price'>$price</span><span class='important-info'>€</span></p>
                                 </div>
                                 ";
                             }
@@ -173,12 +167,30 @@
                     </div>
 
                     <div id="payment">
-                        <div class="payment-method">
+                        <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method">
 
                             <p>L'accompagnant doit <span class="nowrap"> payer :</span></p>
-                            <p class="price-display"><span class="important-info bigger-font"><?php echo $totalPrice ?>€</span></p>
+                            <input 
+                                class="price-display important-info bigger-font"
+                                id="price-display"
+                                name="totalPrice"
+                                value=""
+                                type="number"
+                                disabled="disabled"
+                            >
+                            <!-- <span class="important-info bigger-font" id="price-display">€</span> -->
                             
-                            <button class="confirm-payment">
+                            <input
+                                class="confirm-payment"
+                                type="submit"
+                                name="confirm"
+                                value="Go"
+                                data-confirmed="<?php
+                                    // if ($ans[''])
+                                ?>"
+                            >
+
+                            <!-- <label for="confirm">
                                 <img
                                     src="../../img/confirm-icon.png"
                                     id="everyone"
@@ -187,9 +199,9 @@
                                     alt="Confirm"
                                     data-confirmed="false"
                                 >
-                            </button>
+                            </label> -->
 
-                        </div>
+                        </form>
 
                     </div>
 
