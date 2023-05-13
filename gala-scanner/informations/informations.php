@@ -83,7 +83,7 @@
                     <?php if ($ans['nChildren'] > 0) : ?>
                         <div class="info-field">
                             <img src="../../img/crowd-icon.png" class="info-icon" alt="Icon">
-                            <p>Est accompagné par <span class="important-info"><?php echo $ans['nChildren'] ?> personne<?php if ($ans['nChildren'] > 1) echo "s"; ?>.</span></p>
+                            <p><span class="important-info"><?php echo $ans['nChildren'] ?> personne<?php if ($ans['nChildren'] > 1) echo "s sont dépendantes" ?></span> <?php if ($ans['nChildren'] == 1) echo "est dépendante" ?>.</p>
                         </div>
                     <?php endif; ?>
 
@@ -96,7 +96,7 @@
 
                         <div class="info-field">
                             <img src="../../img/parent-icon.png" class="info-icon" alt="Icon">
-                            <p>Accompagne <span class="important-info"><?php echo $ans['parentNode'] ?>.</span></p>
+                            <p>Dépend de <span class="important-info"><?php echo $ans['parentNode'] ?>.</span></p>
                         </div>
                     <?php endif; ?>
                 </section>
