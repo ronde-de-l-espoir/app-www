@@ -116,8 +116,20 @@
 
                     <div id="owed">
 
-                        <div class="person-accountability">
-                            <img src="../../img/person-icon.png" alt="Icon" class="icon">
+                        <div
+                            class="person-accountability"
+                            data-id='<?php echo $ans['id'] ?>'
+                            data-price='<?php echo $ans['price'] ?>'
+                            data-hasPaid='<?php echo $ans['hasPaid'] ?>'
+                            data-isSelected='0'
+                        >
+                            <img src="<?php
+                                if ($ans['hasPaid']) {
+                                    echo '../../img/person-paid-icon.png';
+                                } else {
+                                    echo '../../img/person-icon.png';
+                                }
+                            ?>" alt="Icon" class="icon">
                             <p><?php echo $ans['fname'] ?></p>
                             <p>
                                 <span class="important-info">
@@ -137,12 +149,18 @@
                             for ($i = 0; $i < count($result); $i++) {
                                 $fname = $result[$i]['fname'];
                                 $price = $result[$i]['price'];
+                                $id = $result[$i]['id'];
+                                $hasPaid = $result[$i]['hasPaid'];
+                                $url = '../../img/person-icon.png';
+                                if ($hasPaid) {
+                                    $url = '../../img/person-paid-icon.png';
+                                }
 
                                 $totalPrice += $price;
 
                                 echo "
-                                <div class='person-accountability'>
-                                    <img src='../../img/person-icon.png' alt='Icon' class='icon'>
+                                <div class='person-accountability' data-id='$id' data-price='$price' data-hasPaid='$hasPaid' data-isSelected='0'>
+                                    <img src='$url' alt='Icon' class='icon'>
                                     <p>$fname</p>
                                     <p><span class='important-info'>$price</span><span class='important-info'>€</span></p>
                                 </div>
@@ -171,30 +189,8 @@
                                 >
                             </button>
 
-                            <!-- <p>L'accompagnant paie pour : <br></p> -->
-                            <!-- <ul>
-                                <li><span class="important-info"> - Lui-même</span></li>
-                                <li><span class="important-info"> - Jonathan</span></li>
-                                <li><span class="important-info"> - Jadzia</span></li>
-                                <li><span class="important-info"> - Tom</span></li>
-                            </ul> -->
-                            <!-- <p>L'accompagnant doit payer <span class="important-info bigger-font"><?php echo $totalPrice ?>€</span> </p> -->
-
                         </div>
 
-                        <!-- <div class="payment-method">
-                            <p>L'accompagnant a payé <span class="nowrap">que pour lui :</span></p>
-                            <button class="confirm-payment">
-                                <img
-                                    src="../../img/confirm-icon.png"
-                                    id="solo"
-                                    class="icon-confirm"
-                                    onclick="handleConfirm('solo')"
-                                    alt="Confirm"
-                                    data-confirmed="true"
-                                >
-                            </button> -->
-                        </div>
                     </div>
 
                 <?php else : ?>
