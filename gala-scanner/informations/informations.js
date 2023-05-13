@@ -22,4 +22,31 @@ function __init__confirmButtons() {
     })
 }
 
+// function handleAccountabilityChange() {
+//     const people = document.getElementsByClassName('person-accountability');
+//     people.forEach(person => {
+//         const icon = people.querySelectorAll('img')[0]
+//         console.log(icon)
+//     })
+// }
+
+const people = document.querySelectorAll('.person-accountability')
+people.forEach(person => {
+    person.addEventListener('click', () => {
+        const icon = person.getElementsByTagName('img')[0]
+        let url = icon.getAttribute('src')
+        if (person.getAttribute('data-hasPaid') == "0") {
+            if (person.getAttribute('data-isSelected') == 0) {
+                url = '../../img/person-selected-icon.png'
+                icon.setAttribute('src', url)
+                person.setAttribute('data-isSelected', '1')
+            } else if (person.getAttribute('data-isSelected') == 1) {
+                url = '../../img/person-icon.png'
+                icon.setAttribute('src', url)
+                person.setAttribute('data-isSelected', '0')
+            }
+        }
+    })
+})
+
 __init__confirmButtons();
