@@ -167,7 +167,7 @@ header {
 }
 
 .important-info {
-    color: cornflowerblue;
+    color: #6495ed;
     font-size: 1.1rem;
     font-weight: 700;
     white-space: nowrap;
@@ -229,8 +229,9 @@ header {
 .payment-method {
     background-color: #DDD;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
     width: 100%;
     padding: 10px;
     margin: auto;
@@ -241,7 +242,26 @@ header {
     margin-top: -5px;
     padding: 7px;
     padding-right: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
+
+.payment-method p:first-child {
+    padding-bottom: 0;
+}
+
+.payment-method .price-display {
+    text-align: center;
+    padding-top: 0;
+}
+/* 
+.payment-method ul {
+    margin-top: -5px;
+}
+
+.payment-method ul li {
+    margin-left: 15px;
+} */
 
 .payment-method .confirm-payment {
     border: none;
@@ -256,4 +276,8 @@ header {
 
 .nowrap {
     white-space: nowrap;
+}
+
+.bigger-font {
+    font-size: 2rem !important;
 }
