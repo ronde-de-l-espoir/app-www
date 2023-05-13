@@ -90,13 +90,16 @@
                     <?php if ($ans['parentNode'] != 0) : ?>
                         <?php
 
-                            // do stuff here
+                            $parentId = $ans['parentNode'];
+                            $parentSql = "SELECT * FROM preinscriptions WHERE id = '$parentId'";
+                            $parentRes = mysqli_query($conn, $parentSql);
+                            $parentAns = mysqli_fetch_assoc($parentRes);
 
                         ?>
 
                         <div class="info-field">
                             <img src="../../img/parent-icon.png" class="info-icon" alt="Icon">
-                            <p>Dépend de <span class="important-info"><?php echo $ans['parentNode'] ?>.</span></p>
+                            <p>Dépend de <span class="important-info"><?php echo $parentAns['id'] ?>.</span></p>
                         </div>
                     <?php endif; ?>
                 </section>
