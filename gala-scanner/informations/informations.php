@@ -105,7 +105,15 @@
 
                         <div class="info-field">
                             <img src="../../img/parent-icon.png" class="info-icon" alt="Icon">
-                            <p>Dépend de <span class="important-info"><?php echo $parentAns['id'] ?>.</span></p>
+                            <p>Dépend de <span class="important-info"><?php
+                                echo $parentAns['fname'];
+                                // $id = $parentAns['id'];
+                                // $dependanceSql = "SELECT fname FROM preinscriptions WHERE id = '$id'";
+                                // $dependanceRes = mysqli_query($conn, $dependanceSql);
+                                // $dependanceAns = mysqli_fetch_assoc($dependanceRes);
+                                
+                                // echo $dependanceAns['fname'];
+                            ?>.</span></p>
                         </div>
                     <?php endif; ?>
                 </section>
