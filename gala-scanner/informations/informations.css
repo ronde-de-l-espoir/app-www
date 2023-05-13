@@ -280,17 +280,21 @@ header {
     margin: auto;
 }
 
+.confirm-payment {
+    width: min-content;
+}
+
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+} */
 
 /* Firefox */
-input[type=number] {
+/* input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 
 .payment-method .confirm-payment .icon-confirm {
     width: 72px;

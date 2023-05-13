@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../root.css">
     <link rel="stylesheet" href="./informations.css">
-    <script src="./informations.js" defer></script>
+    <script src="./informations-withChildren.js" defer></script>
     <title>Informations</title>
 </head>
 <body>
@@ -167,7 +167,7 @@
                     </div>
 
                     <div id="payment">
-                        <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method">
+                        <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method" id="form-payment">
 
                             <p>L'accompagnant doit <span class="nowrap"> payer :</span></p>
                             <input 
@@ -175,16 +175,17 @@
                                 id="price-display"
                                 name="totalPrice"
                                 value=""
-                                type="number"
-                                disabled="disabled"
+                                type="text"
+                                readonly="readonly"
                             >
                             <!-- <span class="important-info bigger-font" id="price-display">€</span> -->
                             
                             <input
                                 class="confirm-payment"
+                                id="confirm-payment"
                                 type="submit"
                                 name="confirm"
-                                value="Go"
+                                value="nvm"
                                 data-confirmed="<?php
                                     // if ($ans[''])
                                 ?>"
