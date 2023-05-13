@@ -121,13 +121,13 @@
                             data-id='<?php echo $ans['id'] ?>'
                             data-price='<?php echo $ans['price'] ?>'
                             data-hasPaid='<?php echo $ans['hasPaid'] ?>'
-                            data-isSelected='0'
+                            data-isSelected='1'
                         >
                             <img src="<?php
                                 if ($ans['hasPaid']) {
                                     echo '../../img/person-paid-icon.png';
                                 } else {
-                                    echo '../../img/person-icon.png';
+                                    echo '../../img/person-selected-icon.png';
                                 }
                             ?>" alt="Icon" class="icon">
                             <p><?php echo $ans['fname'] ?></p>
