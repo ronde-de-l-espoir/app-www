@@ -1,3 +1,9 @@
+async function sleep(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms)
+    })
+}
+
 const people = document.querySelectorAll('.person-accountability');
 people.forEach(person => {
     person.addEventListener('click', () => {
@@ -44,7 +50,9 @@ document.getElementById('form-payment').addEventListener('submit', (event) => {
 
     const accounts = document.querySelectorAll('.person-accountability');
     if (accounts[0].getAttribute('data-hasPaid') != 0) {
-        console.warn("Error: Le dépendant a déjà payé");
+        const errorMsg = "Le dépendant a déjà payé.";
+        const parent = document.getElementById('error-message-wrapper')
+        createErrorMessage(errorMsg, parent);
         return;
     }
     
@@ -56,12 +64,16 @@ document.getElementById('form-payment').addEventListener('submit', (event) => {
     })
 
     if (selectedAccounts.length == 0) {
-        console.warn("Error: Personne n'a été sélectionné");
+        const errorMsg = "Personne n'a été sélectionné.";
+        const parent = document.getElementById('error-message-wrapper')
+        createErrorMessage(errorMsg, parent);
         return;
     }
     
     if (selectedAccounts.includes(accounts[0].getAttribute('data-id')) == false) {
-        console.warn("Error: Le dépendant n'est pas séléctionné");
+        const errorMsg = "Le dépendant n'est pas sélectionné.";
+        const parent = document.getElementById('error-message-wrapper')
+        createErrorMessage(errorMsg, parent);
         return;
     }
     
@@ -81,6 +93,32 @@ function __init__confirmButtons() {
     if (people[0].getAttribute('data-hasPaid') == 1) {
         button.style.backgroundImage = "url(../../img/confirmed-icon.png)"
     }
+}
+
+async function closeErrorMessage() {
+    const msgWrapper = document.getElementById('error-message-wrapper');
+    const msg = msgWrapper.getElementsByClassName('error-message')[0];
+    msg.style.transition = "400ms ease-in";
+    msg.style.transform = "translateY(-100px)";
+    msg.style.opacity = "0.2";
+    await sleep(400);
+    msgWrapper.innerHTML = '';
+}
+
+function createErrorMessage(errorText, parentElem) {
+    parentElem.innerHTML = '';
+
+    console.log(errorText, parentElem)
+    const newMsg = document.createElement('div');
+    newMsg.classList.add('error-message');
+    const html = `
+        <h2>Erreur :</h2>
+        <p>${errorText}</p>
+        <img src="../../img/close-icon.png" onclick="closeErrorMessage()">
+    `;
+    newMsg.innerHTML = html;
+    parentElem.appendChild(newMsg);
+    parentElem.style.display = 'flex';
 }
 
 updatePrice();

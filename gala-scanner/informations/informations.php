@@ -113,7 +113,7 @@
                 </section>
 
                 <section id="accounts">
-                    <?php if ($ans['nChildren'] > 0) : ?>
+                <?php if ($ans['nChildren'] > 0) : ?>
                     <!-- ACCOUNTABILITY FOR ACCOMPANIED PEOPLE -->
 
                     <div id="owed">
@@ -219,7 +219,8 @@
         </main>
         
     <?php endif ?>
-    
+
+    <div id="error-message-wrapper"></div>
     
     </body>
 </html>

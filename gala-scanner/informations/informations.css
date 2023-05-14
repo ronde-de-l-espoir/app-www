@@ -284,18 +284,6 @@ header {
     width: min-content;
 }
 
-/* Chrome, Safari, Edge, Opera */
-/* input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-} */
-
-/* Firefox */
-/* input[type=number] {
-  -moz-appearance: textfield;
-} */
-
 .payment-method .confirm-payment .icon-confirm {
     width: 72px;
     aspect-ratio: 1/1;
@@ -307,4 +295,29 @@ input::-webkit-inner-spin-button {
 
 .bigger-font {
     font-size: 2rem !important;
+}
+
+#error-message-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 20px;
+    width: 100%;
+    display: none;
+}
+
+.error-message {
+    position: relative;
+    background-color: #e4d11d;
+    padding: 10px 15px;
+    padding-top: 5px;
+    border-radius: 13px;
+    max-width: 350px;
+    width: 80vw;
+}
+
+.error-message img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
