@@ -74,10 +74,10 @@
                     <div class="info-field">
                         <?php if ($ans['eventInfo'] == 'Gala') : ?>
                             <img src="../../img/show-icon.png" class="info-icon" alt="Event Icon">
-                        <?php elseif ($ans['event'] == 'Concert') : ?>
+                        <?php elseif ($ans['eventInfo'] == 'Concert') : ?>
                             <img src="../../img/concert-icon.png" class="info-icon" alt="Event Icon">
                         <?php endif; ?>
-                        <p>Participe au <span class="important-info"><?php echo $ans['event'] ?>.</span></p>
+                        <p>Participe au <span class="important-info"><?php echo $ans['eventInfo'] ?>.</span></p>
                     </div>
 
                     <?php if ($ans['nChildren'] > 0) : ?>
