@@ -72,7 +72,7 @@
                 <section id="event">
 
                     <div class="info-field">
-                        <?php if ($ans['event'] == 'Gala') : ?>
+                        <?php if ($ans['eventInfo'] == 'Gala') : ?>
                             <img src="../../img/show-icon.png" class="info-icon" alt="Event Icon">
                         <?php elseif ($ans['event'] == 'Concert') : ?>
                             <img src="../../img/concert-icon.png" class="info-icon" alt="Event Icon">
