@@ -217,14 +217,14 @@
 
             </div>
         </main>
+    
+        <a href="../how-to.php" class="return-link">
+            <img src="../../img/return-icon.png" class="return-icon" alt="Return">
+        </a>
         
     <?php endif ?>
 
     <div id="error-message-wrapper"></div>
-    
-    <a href="../how-to.php" class="return-link">
-        <img src="../../img/return-icon.png" class="return-icon" alt="Return">
-    </a>
 
     </body>
 </html>
