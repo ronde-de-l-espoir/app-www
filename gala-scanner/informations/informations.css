@@ -241,7 +241,7 @@ header {
     border-radius: 7px;
 }
 
-.payment-method p {
+.payment-legend {
     margin-top: -5px;
     padding: 7px;
     font-weight: 600;
@@ -249,11 +249,11 @@ header {
     text-align: center;
 }
 
-.payment-method p:first-child {
+.payment-legend:first-child {
     padding-bottom: 0;
 }
 
-.payment-method .price-display {
+.price-display {
     text-align: center;
     padding-top: 0;
     background-color: transparent;
@@ -329,4 +329,11 @@ header {
     margin-left: auto;
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+.alone-payment form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

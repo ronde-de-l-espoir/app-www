@@ -21,7 +21,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../root.css">
     <link rel="stylesheet" href="./informations.css">
-    <script src="./informations-withChildren.js" defer></script>
+    <?php if ($ans['nChildren'] > 0) : ?>
+        <script src="./informations-withChildren.js" defer></script>
+    <?php else : ?>
+        <script src="./information-alone.js" defer></script>
+    <?php endif ?>
     <title>Informations</title>
 </head>
 <body>
@@ -171,8 +175,8 @@
                     <div id="payment">
                         <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method" id="form-payment">
 
-                            <p>L'accompagnant doit <span class="nowrap"> payer :</span></p>
-                            <input 
+                            <p class="payment-legend">L'accompagnant doit <span class="nowrap"> payer :</span></p>
+                            <input
                                 class="price-display important-info bigger-font"
                                 id="price-display"
                                 name="totalPrice"
@@ -188,29 +192,37 @@
                                 type="submit"
                                 name="confirm"
                                 value="nvm"
-                                data-confirmed="<?php
-                                    // if ($ans[''])
-                                ?>"
+                                data-confirmed=""
                             >
-
-                            <!-- <label for="confirm">
-                                <img
-                                    src="../../img/confirm-icon.png"
-                                    id="everyone"
-                                    class="icon-confirm"
-                                    onclick="handleConfirm('everyone')"
-                                    alt="Confirm"
-                                    data-confirmed="false"
-                                >
-                            </label> -->
-
                         </form>
 
                     </div>
 
                 <?php else : ?>
 
-
+                    <div class="alone-payment">
+                        <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method">
+                            
+                            <p class="payment-legend"><?php echo $ans['fname'] ?> doit <span class="nowrap"> payer :</span></p>
+                            <input
+                                class="price-display important-info bigger-font"
+                                id="price-display"
+                                name="totalPrice"
+                                value="<?php echo $ans['price'] ?>€"
+                                type="text"
+                                readonly="readonly"
+                            >
+                            
+                            <input
+                                class=""
+                                id=""
+                                type="submit"
+                                name="confirm"
+                                value="nvm"
+                                data-confirmed=""
+                            >
+                        </form>
+                    </div>
                     
                 <?php endif; ?>
                 </section>
