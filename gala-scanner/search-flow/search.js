@@ -61,7 +61,7 @@ function createHTMLResult(id, fname, lname, childrenAmount, paymentIconPath) {
     }
 
     let html = `
-    <div class="result">
+    <div class="result" onclick="window.location='../informations/informations.php?id=${id}'">
             <div class="code-display">
                 <p>${idFirst}</p>
                 <p>${idSecond}</p>
