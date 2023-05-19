@@ -33,8 +33,22 @@
         ];
 
         echo json_encode($ans);
-    } else {
-        $ans = ["status" => 404];
+    }
+
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "UPDATE preinscriptions SET hasPaid = 1 WHERE id = $id";
+        if (!mysqli_query($conn, $sql)) {
+            $ans = [
+                "status" => 500,
+                "error" => mysqli_error()
+            ];
+            echo json_encode($ans);
+            exit(500);
+        }
+        $ans = [
+            "status" => 200
+        ];
         echo json_encode($ans);
     }
 
