@@ -80,6 +80,8 @@
                             <img src="../../img/show-icon.png" class="info-icon" alt="Event Icon">
                         <?php elseif ($ans['eventInfo'] == 'Concert') : ?>
                             <img src="../../img/concert-icon.png" class="info-icon" alt="Event Icon">
+                        <?php elseif ($ans['eventInfo'] == 'Test') : ?>
+                            <img src="../../img/test-icon.png" class="info-icon" alt="Event Icon">
                         <?php endif; ?>
                         <p>Participe au <span class="important-info"><?php echo $ans['eventInfo'] ?>.</span></p>
                     </div>
