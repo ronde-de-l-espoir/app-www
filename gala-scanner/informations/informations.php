@@ -201,7 +201,7 @@
                 <?php else : ?>
 
                     <div class="alone-payment">
-                        <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method">
+                        <form action="./informations.php?id=<?php echo $ans['id'] ?>" method="POST" class="payment-method" id="form-payment">
                             
                             <p class="payment-legend"><?php echo $ans['fname'] ?> doit <span class="nowrap"> payer :</span></p>
                             <input
@@ -214,8 +214,8 @@
                             >
                             
                             <input
-                                class=""
-                                id=""
+                                class="confirm-payment"
+                                id="confirm-payment"
                                 type="submit"
                                 name="confirm"
                                 value="nvm"
