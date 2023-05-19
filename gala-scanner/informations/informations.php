@@ -50,7 +50,7 @@
             <div class="main-wrapper">        
 
                 <section id="identity">
-                    <div class="code-display">
+                    <div class="code-display" data-totalId="<?php echo $ans['id'] ?>">
                         <p><?php 
                             for($i = 0; $i < 5; $i++) {
                                 echo $ans['id'][$i];
@@ -208,7 +208,13 @@
                                 class="price-display important-info bigger-font"
                                 id="price-display"
                                 name="totalPrice"
-                                value="<?php echo $ans['price'] ?>€"
+                                value="<?php
+                                    if ($ans['hasPaid'] == 0) {
+                                        echo $ans['price'];
+                                    } else {
+                                        echo '0';
+                                    }
+                                ?>€"
                                 type="text"
                                 readonly="readonly"
                             >
@@ -219,7 +225,7 @@
                                 type="submit"
                                 name="confirm"
                                 value="nvm"
-                                data-confirmed=""
+                                data-hasPaid="<?php echo $ans['hasPaid'] ?>"
                             >
                         </form>
                     </div>
