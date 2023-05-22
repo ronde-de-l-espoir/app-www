@@ -68,4 +68,39 @@ main form {
 .label-img {
     width: 36px;
     aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+}
+
+#don {
+    background-image: url('../img/don-icon.png');
+}
+
+#vente {
+    background-image: url('../img/vente-icon.png');
+}
+
+#cash {
+    background-image: url('../img/cash-icon.png');
+}
+
+#cheque {
+    background-image: url('../img/cheque-icon.png');
+}
+
+input[type="radio"]:checked + #don {
+    background-image: url('../img/don-selected-icon.png');
+}
+
+input[type="radio"]:checked + #vente {
+    background-image: url('../img/vente-selected-icon.png');
+    color: red;
+}
+
+input[type="radio"]:checked + #cash {
+    background-image: url('../img/cash-selected-icon.png');
+}
+
+input[type="radio"]:checked + #cheque {
+    background-image: url('../img/cheque-selected-icon.png');
 }
