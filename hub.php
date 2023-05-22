@@ -31,7 +31,7 @@
     <main>
 
         <?php if ($_SESSION['canAddPayment']) : ?>
-        <div class="option" data-link="money-form/main.php">
+        <div class="option" data-link="money-form/form.php">
             <img src="./img/form-icon.png" alt="icon">
             <div class="option-text">
                 <h3>Entrées d'argent</h3>
