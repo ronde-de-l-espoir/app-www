@@ -75,32 +75,68 @@ main form {
 #don {
     background-image: url('../img/don-icon.png');
 }
-
-#vente {
-    background-image: url('../img/vente-icon.png');
-}
-
-#cash {
-    background-image: url('../img/cash-icon.png');
-}
-
-#cheque {
-    background-image: url('../img/cheque-icon.png');
-}
-
 input[type="radio"]:checked + #don {
     background-image: url('../img/don-selected-icon.png');
 }
 
+#vente {
+    background-image: url('../img/vente-icon.png');
+}
 input[type="radio"]:checked + #vente {
     background-image: url('../img/vente-selected-icon.png');
     color: red;
 }
 
+#cash {
+    background-image: url('../img/cash-icon.png');
+}
 input[type="radio"]:checked + #cash {
     background-image: url('../img/cash-selected-icon.png');
 }
 
+#cheque {
+    background-image: url('../img/cheque-icon.png');
+}
 input[type="radio"]:checked + #cheque {
     background-image: url('../img/cheque-selected-icon.png');
+}
+
+.columnFlex {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.amount-input-wrapper {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.amount-input {
+    width: 30%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    padding-inline: 3.5px;
+    color: #444;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.amount-input-wrapper h4 {
+    font-size: 1rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
