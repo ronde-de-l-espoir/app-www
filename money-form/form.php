@@ -27,16 +27,16 @@
             <div class="form-element">
                 <h3>Type de l'entrée :</h3>
                 <div class="input-wrapper">
-                    <label><input type="radio" name="type" value="don" required><img src="../img/don-icon.png" alt="" class="label-img">Don</label>
-                    <label><input type="radio" name="type" value="vente" required><img src="../img/vente-icon.png" alt="" class="label-img">Vente</label>
+                    <label><input type="radio" name="type" value="don" required><div class="label-img" id="don"></div>Don</label>
+                    <label><input type="radio" name="type" value="vente" required><div class="label-img" id="vente"></div>Vente</label>
                 </div>
             </div>
 
             <div class="form-element">
                 <h3>Moyen de paiement :</h3>
                 <div class="input-wrapper">
-                    <label><input type="radio" name="moyen" value="cash" required><img src="../img/cash-icon.png" alt="" class="label-img">Espèces</label>
-                    <label><input type="radio" name="moyen" value="cheque" required><img src="../img/cheque-icon.png" alt="" class="label-img">Chèque</label>
+                    <label><input type="radio" name="moyen" value="cash" required><div class="label-img" id="cash"></div>Espèces</label>
+                    <label><input type="radio" name="moyen" value="cheque" required><div class="label-img" id="cheque"></div>Chèque</label>
                 </div>
             </div>
 
