@@ -40,6 +40,33 @@
                 </div>
             </div>
 
+            <div class="form-element">
+                <h3>Montant :</h3>
+                <div class="input-wrapper columnFlex">
+                    <div class="amount-input-wrapper">
+                        <input
+                            type="number"
+                            class="amount-input"
+                            name="amount"
+                            value=""
+                            min="0"
+                            max="10000"
+                        >€
+                    </div>
+                    <div class="amount-input-wrapper">
+                        <h4>Confirmez :</h4>
+                        <input
+                            type="number"
+                            class="amount-input"
+                            name="amount"
+                            value=""
+                            min="0"
+                            max="10000"
+                        >€
+                    </div>
+                </div>
+            </div>
+
             <input type="submit" name="submit" value="submit">
         </form>
     </main>
