@@ -143,31 +143,32 @@
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title">Pré-Gala</h3>
-                <p class="period-text"><span class="period-time">19h-19h30</span>Evènements variés par l'<i>APEL</i>, le <i>CVL</i> et <i>Mr. Vallet</i>:</p>
-                <ul>
-                    <li>Buffet</li>
-                    <li>Buvette</li>
-                    <li><b>Résultats de la Tombola</b></li>
-                </ul>
+                <h3 class="period-title">Tirage de la Tombola</h3>
+                <p class="period-text"><span class="period-time">19h30</span>Tirage de la Tombola supervisée par <i>Mme Abou</i>. <br> Des buvettes seront à disposition.</p>
             </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
                 <h3 class="period-title">Début du Gala</h3>
-                <p class="period-text"><span class="period-time">20h30</span>Soirée de Gala dans l'amphithéâtre avec des représentations théâtrales.</p>
-            </div>
-            
-            <div class="period">
-                <img src="" alt="" class="period-image">
-                <h3 class="period-title">Soirée dansante</h3>
-                <p class="period-text"><span class="period-time">21h30/22h</span>Le public est redirigé dehors. Les buvette et buffet seront ouverts (payant) et les musiciens feront l'ambiance musicale.</p>
+                <p class="period-text"><span class="period-time">20h15</span>Redirection du public dans l'amphithéâtre.</p>
             </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
                 <h3 class="period-title">Remise du chèque</h3>
-                <p class="period-text"><span class="period-time">22h/23h</span>Remise du chèque avec le montant total rapporté par tous (Site, Chèques, Buvettes, évènements, etc...). Cela prendra place dehors, après les représentations musicales des élèves.</p>
+                <p class="period-text"><span class="period-time">20h30</span>Remise du chèque avec un discours de la part des officiels.</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Représentation théâtrale</h3>
+                <p class="period-text"><span class="period-time">20h45</span>Représentation de pièce de théâtre par les Terminales options, suivi par 15 à 20 minutes de danse.</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Soirée musicale</h3>
+                <p class="period-text"><span class="period-time">22h</span>Le public est redirigé dehors. Les buvette et buffet seront ouverts (payant) et les musiciens feront l'ambiance musicale.</p>
             </div>
         </div>
     </main>

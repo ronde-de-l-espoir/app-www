@@ -74,6 +74,10 @@ main {
     border-radius: 13px 13px 0 0;
 }
 
+.period .period-text {
+    color: #DDD;
+}
+
 .period img {
     display: none;
 }
