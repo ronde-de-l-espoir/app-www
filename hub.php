@@ -7,7 +7,7 @@
     if (!(isset($_SESSION['connected']))){
         header('Location: ./login/login.php');
     }
-    require('../db_config.php');
+    // require('../db_config.php');
 
 ?>
 
@@ -46,6 +46,16 @@
             <div class="option-text">
                 <h3>Scanner de tickets</h3>
                 <p class="explanation">Scanner des tickets de gala.</p>
+            </div>
+        </div>
+        <?php endif ?>
+
+        <?php if ($_SESSION['canTimeSee']) : ?>
+        <div class="option" data-link="timetable/">
+            <img src="./img/timetable-icon.png" alt="icon">
+            <div class="option-text">
+                <h3>Emploi du temps</h3>
+                <p class="explanation">Emploi du temps du 1er et 2 Juin.</p>
             </div>
         </div>
         <?php endif ?>
