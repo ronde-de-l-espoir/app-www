@@ -21,6 +21,7 @@
                         $_SESSION['identifiant'] = $identifiant;
                         $_SESSION['canAddPayment'] = $answer['canAddPayment'];
                         $_SESSION['canScan'] = $answer['canScan'];
+                        $_SESSION['canTimeSee'] = $answer['canTimeSee'];
                         header('Location: ../hub.php');
                     } else if ($_POST['pwd'] != '') {
                         $errors['pwd'] = "Le mot de passe ne correspond pas à l'identifiant rentré.";
