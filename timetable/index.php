@@ -33,7 +33,7 @@
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title">Pièce de théâtre</h3>
+                <h3 class="period-title">Pièce de Théâtre</h3>
                 <p class="period-text"><span class="period-time">18h-19h</span>Représentation des Terminales Spécialités : Extraits du Soulier de Satin de Claudel et de Richard III de Shakespeare.</p>
             </div>
             
@@ -55,42 +55,119 @@
                 <p class="period-text"><span class="period-time">21h</span>Fermeture du lycée pour tout le monde excepté le staff pour l'organisation du record et les rameurs.</p>
             </div>
 
+
             <div class="new-day"><h2>2 Juin</h2></div>
+            
+
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Dressage Equestre</h3>
+                <p class="period-text"><span class="period-time">8h40</span>Démonstration de dressage équestre avec <i>Lola et Toscane</i>.</p>
+            </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title"></h3>
-                <p class="period-text"><span class="period-time"></span></p>
+                <h3 class="period-title">Ateliers variés :</h3>
+                <ul>
+                    <li><p class="period-text"><span class="period-time">9h-15h</span>Groupes Musicaux</p></li>
+                    <li><p class="period-text"><span class="period-time">9h-15h</span>Baby-foot (PAS CONFIRMER)</p></li>
+                    <li><p class="period-text"><span class="period-time">9h-15h</span>Mixage de musique en salle ____ par <i>Sandro De Palo</i>.</p></li>
+                </ul>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Battle de déguisements</h3>
+                <p class="period-text"><span class="period-time">9h10-10h30</span>Battle de déguisements dans la cour entre les équipes inscrites! Rendez-vous devant le foyer.</p>
             </div>
 
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title"></h3>
-                <p class="period-text"><span class="period-time"></span></p>
+                <h3 class="period-title">Pièce de Théâtre</h3>
+                <p class="period-text"><span class="period-time">9h50-10h50</span>Représentation des Premières Option : <i>Pig Boy</i> de Soublin.</p>
             </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title"></h3>
-                <p class="period-text"><span class="period-time"></span></p>
+                <h3 class="period-title">Tournoi de pétanque</h3>
+                <p class="period-text"><span class="period-time">10h30-12h</span>Tournoi de pétanque entre les équipes inscrites! Rendez-vous devant les salles <i>A</i></p>
             </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title"></h3>
-                <p class="period-text"><span class="period-time"></span></p>
+                <h3 class="period-title">Initiation à la Wing</h3>
+                <p class="period-text"><span class="period-time">10h30-16h30</span>Initiation à la Wing avec <i>Mme. Sabatini</i> et son association Kiteloop.</p>
+            </div>
+            
+            <div class="period important-period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Fin du record!</h3>
+                <p class="period-text"><span class="period-time">11h/12h</span>Fin du record d'ergo aviron dans le hall. Rendez-vous-y pour apprendre si nos rameurs ont battu les petits chinois!</p>
             </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title"></h3>
-                <p class="period-text"><span class="period-time"></span></p>
+                <h3 class="period-title">Lancement du Barbecue</h3>
+                <p class="period-text"><span class="period-time">11h</span>Préparation du repas par les <i>professeurs</i>.</p>
+            </div>
+            
+            <div class="period important-period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Repas</h3>
+                <p class="period-text"><span class="period-time">12h</span>Repas au bénéfice de la Ronde. Le repas est au prix de 5€.</p>
             </div>
             
             <div class="period">
                 <img src="" alt="" class="period-image">
-                <h3 class="period-title"></h3>
-                <p class="period-text"><span class="period-time"></span></p>
+                <h3 class="period-title">Debriefing pour Inter-Littoral</h3>
+                <p class="period-text"><span class="period-time">13h</span>Debriefing des équipes du jeu Inter-Littoral par les membres du <i>CVL</i>.</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Jeu Inter-Littoral</h3>
+                <p class="period-text"><span class="period-time">13h30-16h30</span>Jeu Inter-Littoral, des jeux loufoques pour des équipes loufoques. Les organisateurs et surveillants sont les membres du <i>CVL</i> et <i>Mr. Vallet</i>.</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Résultats</h3>
+                <p class="period-text"><span class="period-time">16h30</span>Résultats de toutes les activités compétitives de la journée (Pétanque, Costumes, Inter-Littoral, etc...)</p>
+            </div>
+            
+            <div class="period danger-period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Ouverture du Gala</h3>
+                <p class="period-text"><span class="period-time">19h</span>Ouverture de la soirée de Gala (Entrée à 10€ pour les adultes et 5€ pour les élèves).</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Pré-Gala</h3>
+                <p class="period-text"><span class="period-time">19h-19h30</span>Evènements variés par l'<i>APEL</i>, le <i>CVL</i> et <i>Mr. Vallet</i>:</p>
+                <ul>
+                    <li>Buffet</li>
+                    <li>Buvette</li>
+                    <li><b>Résultats de la Tombola</b></li>
+                </ul>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Début du Gala</h3>
+                <p class="period-text"><span class="period-time">20h30</span>Soirée de Gala dans l'amphithéâtre avec des représentations théâtrales.</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Soirée dansante</h3>
+                <p class="period-text"><span class="period-time">21h30/22h</span>Le public est redirigé dehors. Les buvette et buffet seront ouverts (payant) et les musiciens feront l'ambiance musicale.</p>
+            </div>
+            
+            <div class="period">
+                <img src="" alt="" class="period-image">
+                <h3 class="period-title">Remise du chèque</h3>
+                <p class="period-text"><span class="period-time">22h/23h</span>Remise du chèque avec le montant total rapporté par tous (Site, Chèques, Buvettes, évènements, etc...). Cela prendra place dehors, après les représentations musicales des élèves.</p>
             </div>
         </div>
     </main>
