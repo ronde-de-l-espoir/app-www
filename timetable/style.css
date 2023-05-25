@@ -62,6 +62,7 @@ main {
     color: #222;
     position: absolute;
     padding: 6px 18px;
+    padding-top: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
