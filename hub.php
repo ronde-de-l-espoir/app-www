@@ -60,6 +60,14 @@
         </div>
         <?php endif ?>
 
+        <div class="option" data-link="view-qr">
+            <img src="./img/qr-code-icon.png" alt="icon">
+            <div class="option-text">
+                <h3>Afficher QR Code</h3>
+                <p class="explanation">Afficher le QR code su site</p>
+            </div>
+        </div>
+
     </main>
 
     <div class="sign-out" onclick="window.location = './reinit.php'">
