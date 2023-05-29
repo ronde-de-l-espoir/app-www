@@ -68,6 +68,14 @@
             </div>
         </div>
 
+        <div class="option" data-link="view-total">
+            <img src="./img/payment-icon.png" alt="icon">
+            <div class="option-text">
+                <h3>Afficher le total</h3>
+                <p class="explanation">Afficher le total récolté</p>
+            </div>
+        </div>
+
     </main>
 
     <div class="sign-out" onclick="window.location = './reinit.php'">
