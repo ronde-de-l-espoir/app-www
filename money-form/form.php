@@ -135,7 +135,15 @@
 
             <?php if ($_SESSION['step'] == 3) : ?>
             <div class="form-element">
-                <h3>Information :</h3>
+                <h3>Informations :</h3>
+                <div class="input-wrapper">
+                    <div class="amount-input-wrapper">
+                        <input type="text" class="amount-input" name="address" value="<?= isset($_SESSION['address']) ? $_SESSION['adress'] : null ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <h3>Informations :</h3>
                 <div class="input-wrapper">
                     <label><input type="radio" name="moyen" value="cash"><div class="label-img" id="cash"></div>Espèces</label>
                     <label><input type="radio" name="moyen" value="cheque"><div class="label-img" id="cheque"></div>Chèque</label>
