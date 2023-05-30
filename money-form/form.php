@@ -51,8 +51,55 @@
                     createErrorMessage("Veuillez sélectionner le moyen de paiement.");
                 }
             } elseif ($_SESSION['step'] == 3){
-                
+                $showedError = false;
+                if (isset($_POST['address'])){
+                    if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['address'])){
+                        $_SESSION['address'] = $_POST['address'];
+                    } else {
+                        createErrorMessage("Adresse invalide.");
+                        $showedError = true;
+                    }
+                } elseif ($showedError == false) {
+                    createErrorMessage("Veuillez renseigner l'adresse.");
+                    $showedError = true;
+                }
+                if (isset($_POST['addressComplement'])){
+                    if ((preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['addressComplement'])) || $_POST['addressComplement'] == ''){
+                        $_SESSION['addressComplement'] = $_POST['addressComplement'];
+                    } else {
+                        createErrorMessage("Complément d'adresse invalide.");
+                        $showedError = true;
+                    }
+                }
+                if (isset($_POST['postal'])){
+                    if (preg_match('/^[0-9]{5}/', $_POST['postal'])){
+                        $_SESSION['postal'] = $_POST['postal'];
+                    } else {
+                        createErrorMessage("Code postal invalide.");
+                        $showedError = true;
+                    }
+                    
+                } elseif ($showedError == false) {
+                    createErrorMessage("Veuillez renseigner le code postal.");
+                    $showedError = true;
+                }
+                if (isset($_POST['city'])){
+                    if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['city'])){
+                        $_SESSION['city'] = $_POST['city'];
+                    } else {
+                        createErrorMessage("Ville invalide.");
+                    }
+                } elseif ($showedError == false) {
+                    createErrorMessage("Veuillez renseigner le code postal.");
+                    $showedError = true;
+                }
+                if ($showedError == false){
+                    $_SESSION['step'] = 4;
+                }
+
             } elseif ($_SESSION['step'] == 4){
+
+            } elseif ($_SESSION['step'] == 5){
                 $showedError = false;
                 if (isset($_POST['amount']) && $_POST['amount'] != null){
                     $amount = $_POST['amount'];
@@ -135,18 +182,35 @@
 
             <?php if ($_SESSION['step'] == 3) : ?>
             <div class="form-element">
-                <h3>Informations :</h3>
+                <h3>Adresse</h3>
                 <div class="input-wrapper">
-                    <div class="amount-input-wrapper">
-                        <input type="text" class="amount-input" name="address" value="<?= isset($_SESSION['address']) ? $_SESSION['adress'] : null ?>">
+                    <div class="text-input-wrapper">
+                        <input type="text" class="text-input" name="address" value="<?= isset($_SESSION['address']) ? $_SESSION['address'] : null ?>">
                     </div>
                 </div>
             </div>
             <div class="form-element">
-                <h3>Informations :</h3>
+                <h3>Complément d'adresse</h3>
                 <div class="input-wrapper">
-                    <label><input type="radio" name="moyen" value="cash"><div class="label-img" id="cash"></div>Espèces</label>
-                    <label><input type="radio" name="moyen" value="cheque"><div class="label-img" id="cheque"></div>Chèque</label>
+                    <div class="text-input-wrapper">
+                        <input type="text" class="text-input" name="addressComplement" value="<?= isset($_SESSION['addressComplement']) ? $_SESSION['addressComplement'] : '' ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <h3>Code postal</h3>
+                <div class="input-wrapper">
+                    <div class="amount-input-wrapper">
+                        <input type="number" class="amount-input" name="postal" value="<?= isset($_SESSION['postal']) ? $_SESSION['postal'] : null ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <h3>Ville</h3>
+                <div class="input-wrapper">
+                    <div class="text-input-wrapper">
+                        <input type="text" class="text-input" name="city" value="<?= isset($_SESSION['city']) ? $_SESSION['city'] : null ?>">
+                    </div>
                 </div>
             </div>
             <?php endif ?>
