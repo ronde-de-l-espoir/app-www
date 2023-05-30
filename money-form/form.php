@@ -3,7 +3,7 @@
         session_start();
     }
 
-    require('../../db_config.php');
+    // require('../../db_config.php');
 
     function createErrorMessage($errorText) {
         echo "
@@ -98,8 +98,77 @@
                 }
 
             } elseif ($_SESSION['step'] == 4){
-
+                if (isset($_POST['isCompany'])){
+                    $_SESSION['isCompany'] = $_POST['isCompany'] == 'true' ? true : false;
+                    $_SESSION['step'] = 5;
+                } else {
+                    createErrorMessage("Veuillez renseigner le type de titulaire");
+                }
+            
             } elseif ($_SESSION['step'] == 5){
+                $showedError = false;
+                if ($_SESSION['isCompany'] == true){
+                    if (isset($_POST['name'])){
+                        if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 \-_.,']*$/", $_POST['name'])){
+                            $_SESSION['companyName'] = $_POST['name'];
+                        } else {
+                            createErrorMessage("Veuillez rensiegner la dénomination sociale de l'entreprise");
+                            $showedError = true;
+                        }
+                    }
+                    if (isset($_POST['siren'])){
+                        if (preg_match("/^\d{9}$/", $_POST['siren'])){
+                            $_SESSION['siren'] = $_POST['siren'];
+                        } else {
+                            createErrorMessage("SIREN invalide");
+                            $showedError = true;
+                        }
+                    } else {
+                        createErrorMessage("Veuillez rensiegner le SIREN");
+                        $showedError = true;
+                    }
+                    if (isset($_POST['siret'])){
+                        if (preg_match("/^\d{14}$/", $_POST['siret'])){
+                            $_SESSION['siret'] = $_POST['siret'];
+                        } else {
+                            createErrorMessage("SIRET invalide");
+                            $showedError = true;
+                        }
+                    } else {
+                        createErrorMessage("Veuillez renseigner le SIRET");
+                        $showedError = true;
+                    }
+                } elseif ($_SESSION['isCompany'] == false){
+                    if (isset($_POST['lname'])){
+                        if (preg_match('/^[a-zA-Z\-\s]+$/', $_POST['lname'])){
+                            $_SESSION['lname'] = $_POST['lname'];
+                        } else {
+                            createErrorMessage("Nom invalide");
+                            $showedError = true;
+                        }
+                    } else {
+                        createErrorMessage("Veuillez renseigner un nom.");
+                        $showedError = true;
+                    }
+                    if (isset($_POST['fname'])){
+                        if (preg_match('/^[a-zA-Z\-\s]+$/', $_POST['fname'])){
+                            $_SESSION['fname'] = $_POST['fname'];
+                        } else {
+                            createErrorMessage("Prénom invalide");
+                            $showedError = true;
+                        }
+                    } else {
+                        createErrorMessage("Veuillez renseigner un prénom.");
+                        $showedError = true;
+                    }
+                }
+                if ($showedError == false){
+                    $_SESSION['step'] = 6;
+                }
+            
+            } elseif ($_SESSION['step'] == 6){
+                $showedError = false;
+            } elseif ($_SESSION['step'] == 7){
                 $showedError = false;
                 if (isset($_POST['amount']) && $_POST['amount'] != null){
                     $amount = $_POST['amount'];
@@ -216,6 +285,71 @@
             <?php endif ?>
 
             <?php if ($_SESSION['step'] == 4) : ?>
+            <div class="form-element">
+                <h3>Type de titulaire :</h3>
+                <div class="input-wrapper">
+                    <label><input type="radio" name="isCompany" value="false"><div class="label-img" id="individu"></div>Individu</label>
+                    <label><input type="radio" name="isCompany" value="true"><div class="label-img" id="entreprise"></div>Entreprise</label>
+                </div>
+            </div>
+            <?php endif ?>
+
+            <?php 
+                if ($_SESSION['step'] == 5 && $_SESSION['isCompany'] == true) :
+                    echo 'yes';
+            ?>
+            <div class="form-element">
+                <h3>Dénomination sociale</h3>
+                <div class="input-wrapper">
+                    <div class="text-input-wrapper">
+                        <input type="text" class="text-input" name="name" value="<?= isset($_SESSION['companyName']) ? $_SESSION['companyName'] : null ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <h3>SIREN</h3>
+                <div class="input-wrapper">
+                    <div class="text-input-wrapper">
+                        <input type="number" class="text-input" name="siren" value="<?= isset($_SESSION['siren']) ? $_SESSION['siren'] : null ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <h3>SIRET</h3>
+                <div class="input-wrapper">
+                    <div class="text-input-wrapper">
+                        <input type="number" class="text-input" name="siret" value="<?= isset($_SESSION['siret']) ? $_SESSION['siret'] : null ?>">
+                    </div>
+                </div>
+            </div>
+
+            <?php 
+                endif;
+                if ($_SESSION['step'] == 5 && $_SESSION['isCompany'] == false) :
+            ?>
+
+            <div class="form-element">
+                <h3>Nom</h3>
+                <div class="input-wrapper">
+                    <div class="text-input-wrapper">
+                        <input type="text" class="text-input" name="lname" value="<?= isset($_SESSION['lname']) ? $_SESSION['lname'] : null ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <h3>Prénom</h3>
+                <div class="input-wrapper">
+                    <div class="text-input-wrapper">
+                        <input type="text" class="text-input" name="fname" value="<?= isset($_SESSION['fname']) ? $_SESSION['fname'] : null ?>">
+                    </div>
+                </div>
+            </div>
+
+            <?php
+                endif;
+            ?>
+
+            <?php if ($_SESSION['step'] == 6) : ?>
             <div class="form-element">
                 <h3>Montant :</h3>
                 <div class="input-wrapper columnFlex">
