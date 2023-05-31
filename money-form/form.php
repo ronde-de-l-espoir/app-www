@@ -53,18 +53,15 @@
                 }
             } elseif ($_SESSION['step'] == 3){
                 $showedError = false;
-                if (isset($_POST['address'])){
+                if ($_POST['address'] !== ''){
                     if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['address'])){
                         $_SESSION['address'] = $_POST['address'];
                     } else {
                         createErrorMessage("Adresse invalide.");
                         $showedError = true;
                     }
-                } elseif ($showedError == false) {
-                    createErrorMessage("Veuillez renseigner l'adresse.");
-                    $showedError = true;
                 }
-                if (isset($_POST['addressComplement'])){
+                if ($_POST['addressComplement'] !== ''){
                     if ((preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['addressComplement'])) || $_POST['addressComplement'] == ''){
                         $_SESSION['addressComplement'] = $_POST['addressComplement'];
                     } else {
@@ -72,27 +69,20 @@
                         $showedError = true;
                     }
                 }
-                if (isset($_POST['postal'])){
+                if ($_POST['postal'] !== ''){
                     if (preg_match('/^[0-9]{5}/', $_POST['postal'])){
                         $_SESSION['postal'] = $_POST['postal'];
                     } elseif ($showedError == false) {
                         createErrorMessage("Code postal invalide.");
                         $showedError = true;
                     }
-                    
-                } elseif ($showedError == false) {
-                    createErrorMessage("Veuillez renseigner le code postal.");
-                    $showedError = true;
                 }
-                if (isset($_POST['city'])){
+                if ($_POST['city'] !== ''){
                     if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['city'])){
                         $_SESSION['city'] = $_POST['city'];
                     } elseif ($showedError == false) {
                         createErrorMessage("Ville invalide.");
                     }
-                } elseif ($showedError == false) {
-                    createErrorMessage("Veuillez renseigner le code postal.");
-                    $showedError = true;
                 }
                 if ($showedError == false){
                     $_SESSION['step'] = 4;
@@ -109,61 +99,46 @@
             } elseif ($_SESSION['step'] == 5){
                 $showedError = false;
                 if ($_SESSION['isCompany'] == true){
-                    if (isset($_POST['name'])){
+                    if ($_POST['name'] !== ''){
                         if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 \-_.,']*$/", $_POST['name'])){
                             $_SESSION['companyName'] = $_POST['name'];
                         } elseif ($showedError == false) {
                             createErrorMessage("Dénomination sociale invalide.");
                             $showedError = true;
                         }
-                    } elseif ($showedError == false) {
-                        createErrorMessage("Veuillez rensiegner la dénomination sociale de l'entreprise");
-                        $showedError = true;
                     }
-                    if (isset($_POST['siren'])){
+                    if ($_POST['siren'] !== ''){
                         if (preg_match("/^\d{9}$/", $_POST['siren'])){
                             $_SESSION['siren'] = $_POST['siren'];
                         } elseif ($showedError == false) {
                             createErrorMessage("SIREN invalide");
                             $showedError = true;
                         }
-                    } elseif ($showedError == false) {
-                        createErrorMessage("Veuillez rensiegner le SIREN");
-                        $showedError = true;
                     }
-                    if (isset($_POST['siret'])){
+                    if ($_POST['siret'] !== ''){
                         if (preg_match("/^\d{14}$/", $_POST['siret'])){
                             $_SESSION['siret'] = $_POST['siret'];
                         } elseif ($showedError == false) {
                             createErrorMessage("SIRET invalide");
                             $showedError = true;
                         }
-                    } elseif ($showedError == false) {
-                        createErrorMessage("Veuillez renseigner le SIRET");
-                        $showedError = true;
                     }
                 } elseif ($_SESSION['isCompany'] == false){
-                    if (isset($_POST['lname'])){
+                    if ($_POST['lname'] !== ''){
                         if (preg_match('/^[a-zA-Z\-\s]+$/', $_POST['lname'])){
                             $_SESSION['lname'] = $_POST['lname'];
                         } elseif ($showedError == false) {
                             createErrorMessage("Nom invalide");
                             $showedError = true;
                         }
-                    } elseif ($showedError == false) {
-                        createErrorMessage("Veuillez renseigner un nom.");
-                        $showedError = true;
                     }
-                    if (isset($_POST['fname'])){
+                    if ($_POST['fname'] !== ''){
                         if (preg_match('/^[a-zA-Z\-\s]+$/', $_POST['fname'])){
                             $_SESSION['fname'] = $_POST['fname'];
                         } elseif ($showedError == false) {
                             createErrorMessage("Prénom invalide");
                             $showedError = true;
                         }
-                    } elseif ($showedError == false) {
-                        createErrorMessage("Veuillez renseigner un prénom.");
-                        $showedError = true;
                     }
                 }
                 if ($showedError == false){
@@ -172,27 +147,21 @@
             
             } elseif ($_SESSION['step'] == 6){
                 $showedError = false;
-                if (isset($_POST['email'])){
+                if ($_POST['email'] !== ''){
                     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
                         $_SESSION['email'] = $_POST['email'];
                     } else {
                         createErrorMessage("Email invalide");
                         $showedError = true;
                     }
-                } elseif ($showedError == false) {
-                    createErrorMessage("Veuillez renseigner un email.");
-                    $showedError = true;
                 }
-                if (isset($_POST['phone'])){
+                if ($_POST['phone'] !== ''){
                     if (preg_match('/^(0|(\+33[\s]?([0]?|[(0)]{3}?)))[1-9]([-. ]?[0-9]{2}){4}$/', $_POST['phone'])){
                         $_SESSION['phone'] = $_POST['phone'];
                     } elseif ($showedError == false) {
                         createErrorMessage("Téléphone invalide");
                         $showedError = true;
                     }
-                } elseif ($showedError == false) {
-                    createErrorMessage("Veuillez renseigner un numéro de téléphone.");
-                    $showedError = true;
                 }
                 if ($showedError == false){
                     $_SESSION['step'] = 7;
