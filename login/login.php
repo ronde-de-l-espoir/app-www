@@ -33,7 +33,7 @@
                 $errors['identifiant'] = "L'identifiant que vous avez rentré n'existe pas.";
             }
         }
-    } elseif ($_SESSION['connected'] == true){
+    } elseif (isset($_SESSION['connected'])) {
         header('Location: ../hub.php');
     }
 ?>
