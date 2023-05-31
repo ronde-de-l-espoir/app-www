@@ -297,6 +297,15 @@
                     if (!mysqli_query($conn, $sql)) {
                         echo 'Error in MySQL:' . mysqli_error($conn);
                     } else {
+                        $startDeleting = false;
+                        foreach ($_SESSION as $key=>$value){
+                            if ($key == 'isDonSimple'){
+                                $startDeleting = true;
+                            }
+                            if ($startDeleting == true){
+                                unset($_SESSION[$key]);
+                            }
+                        }
                         array_push($_SESSION['steps'], '8');
                     }
                 } elseif ($showedError == false) {
