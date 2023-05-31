@@ -320,6 +320,9 @@
         } elseif ($_POST['submit'] == "Retour"){
             array_pop($_SESSION['steps']);
             $currentStep = end($_SESSION['steps']);
+            if ($currentStep == 0){
+                header('Location: ../hub.php');
+            }
         }
     }
 
