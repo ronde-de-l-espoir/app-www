@@ -3,7 +3,7 @@
         session_start();
     }
 
-    // require('../../db_config.php');
+    require('../../db_config.php');
 
     function createErrorMessage($errorText) {
         echo "
@@ -212,7 +212,118 @@
                 }
                 if (isset($amount) && isset($amountConfirm) && $amount == $amountConfirm){
                     $_SESSION['amount'] = $amount;
-                    // do insert
+                    $insert = array();
+                    if ($_SESSION['isCompany'] == true){
+                        if (isset($_SESSION['companyName'])){
+                            array_push($insert, array('companyName'=>$_SESSION['companyName']));
+                        } else {
+                            array_push($insert, array('companyName'=>''));
+                        }
+                        if (isset($_SESSION['siren'])){
+                            array_push($insert, array('companySIREN'=>$_SESSION['siren']));
+                        } else {
+                            array_push($insert, array('companySIREN'=>''));
+                        }
+                        if (isset($_SESSION['siret'])){
+                            array_push($insert, array('companySIRET'=>$_SESSION['siret']));
+                        } else {
+                            array_push($insert, array('companySIRET'=>''));
+                        }
+                        if (isset($_SESSION['email'])){
+                            array_push($insert, array('companyContactAddress'=>$_SESSION['email']));
+                        } else {
+                            array_push($insert, array('companyContactAddress'=>''));
+                        }
+                        if (isset($_SESSION['address'])){
+                            array_push($insert, array('companyAddress'=>$_SESSION['address']));
+                        } else {
+                            array_push($insert, array('companyAddress'=>''));
+                        }
+                        if (isset($_SESSION['addressComplement'])){
+                            array_push($insert, array('companyAddressComplement'=>$_SESSION['addressComplement']));
+                        } else {
+                            array_push($insert, array('companyAddressComplement'=>''));
+                        }
+                        if (isset($_SESSION['postal'])){
+                            array_push($insert, array('companyPostal'=>$_SESSION['postal']));
+                        } else {
+                            array_push($insert, array('companyPostal'=>''));
+                        }
+                        if (isset($_SESSION['city'])){
+                            array_push($insert, array('companyCity'=>$_SESSION['city']));
+                        } else {
+                            array_push($insert, array('companyCity'=>''));
+                        }
+                    } elseif ($_SESSION['isCompany'] == false){
+                        if (isset($_SESSION['fname'])){
+                            array_push($insert, array('fname'=>$_SESSION['fname']));
+                        } else {
+                            array_push($insert, array('fname'=>''));
+                        }
+                        if (isset($_SESSION['lname'])){
+                            array_push($insert, array('lname'=>$_SESSION['lname']));
+                        } else {
+                            array_push($insert, array('lname'=>''));
+                        }
+                        if (isset($_SESSION['postal'])){
+                            array_push($insert, array('postal'=>$_SESSION['postal']));
+                        } else {
+                            array_push($insert, array('postal'=>''));
+                        }
+                        if (isset($_SESSION['city'])){
+                            array_push($insert, array('city'=>$_SESSION['city']));
+                        } else {
+                            array_push($insert, array('city'=>''));
+                        }
+                        if (isset($_SESSION['address'])){
+                            array_push($insert, array('mailingAddress'=>$_SESSION['address']));
+                        } else {
+                            array_push($insert, array('mailingAddress'=>''));
+                        }
+                        if (isset($_SESSION['addressComplement'])){
+                            array_push($insert, array('addressComplement'=>$_SESSION['addressComplement']));
+                        } else {
+                            array_push($insert, array('addressComplement'=>''));
+                        }
+                        if (isset($_SESSION['email'])){
+                            array_push($insert, array('email'=>$_SESSION['email']));
+                        } else {
+                            array_push($insert, array(''=>''));
+                        }
+                        if (isset($_SESSION['phone'])){
+                            array_push($insert, array('phone'=>$_SESSION['phone']));
+                        } else {
+                            array_push($insert, array('phone'=>''));
+                        }
+                    }
+                    array_push($insert, array('amount_donated'=>$_SESSION['amount'] ? 1 : 0));
+                    array_push($insert, array('isCompany'=>$_SESSION['isCompany'] ? 1 : 0));
+                    array_push($insert, array('isAnonymous'=>0));
+                    array_push($insert, array('isCash'=>$_SESSION['isCash'] ? 1 : 0));
+                    array_push($insert, array('isCheque'=>$_SESSION['isCheque'] ? 1 : 0));
+                    array_push($insert, array('isCard'=>0));
+                    array_push($insert, array('isChequeToIT'=>0));
+                    array_push($insert, array('isDonSimple'=>$_SESSION['isDonSimple'] ? 1 : 0));
+                    array_push($insert, array('isVente'=>$_SESSION['isVente'] ? 1 : 0));
+
+                    $sqlbits = array('', '');
+                    foreach ($insert as $info) {
+                        foreach ($info as $key=>$value){
+                            $sqlbits[0] = $sqlbits[0] . $key . ', ';
+                            $sqlbits[1] = $sqlbits[1] . "'" . $value . "'" . ', ';
+                        }
+                    }
+
+                    $sqlbits[0] = trim($sqlbits[0], ', ');
+                    $sqlbits[1] = trim($sqlbits[1], ', ');
+
+                    $sql = 'INSERT INTO donations (' . $sqlbits[0] . ') VALUES (' . $sqlbits[1] . ');';
+                    if (!mysqli_query($conn, $sql)) {
+                        echo 'Error in MySQL:' . mysqli_error($conn);
+                    } else {
+                        // header('Location: ./success.php');
+                        echo "CONGRATS";
+                    }
                 } elseif ($showedError == false) {
                     createErrorMessage("Le montant diffère d'une case à l'autre.");
                     $showedError = true;
