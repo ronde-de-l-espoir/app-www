@@ -532,7 +532,7 @@
                     Le paiement a bien été enregistré !
                 </div>
                 <div id="exit">
-                    <button onclick="location.href = '../hub.php'">Retour à l'accueil</button>
+                    <button onclick="window.location.href = '../hub.php'">Retour à l'accueil</button>
                 </div>
             </div>
             <?php endif ?>
