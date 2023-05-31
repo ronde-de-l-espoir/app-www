@@ -273,6 +273,7 @@
                         }
                     }
                     array_push($insert, array('amount_donated'=>$_SESSION['amount'] ? 1 : 0));
+                    // array_push($insert, array('real_amount'=>$_SESSION['amount'] ? 1 : 0));
                     array_push($insert, array('isCompany'=>$_SESSION['isCompany'] ? 1 : 0));
                     array_push($insert, array('isAnonymous'=>0));
                     array_push($insert, array('isCash'=>$_SESSION['isCash'] ? 1 : 0));
