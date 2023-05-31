@@ -41,7 +41,8 @@
                     if ($_POST['moyen'] == 'cash'){
                         $_SESSION['isCash'] = true;
                         $_SESSION['isCheque'] = false;
-                        $_SESSION['step'] = 4;
+                        $_SESSION['isCompany'] = false;
+                        $_SESSION['step'] = 7;
                     } elseif ($_POST['moyen'] == 'cheque'){
                         $_SESSION['isCash'] = false;
                         $_SESSION['isCheque'] = true;
@@ -288,7 +289,7 @@
                         if (isset($_SESSION['email'])){
                             array_push($insert, array('email'=>$_SESSION['email']));
                         } else {
-                            array_push($insert, array(''=>''));
+                            array_push($insert, array('email'=>''));
                         }
                         if (isset($_SESSION['phone'])){
                             array_push($insert, array('phone'=>$_SESSION['phone']));
