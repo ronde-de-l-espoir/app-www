@@ -34,7 +34,6 @@
                         $_SESSION['isDonSimple'] = true;
                         $_SESSION['isVente'] = true;
                     }
-                    echo 'yes';
                     array_push($_SESSION['steps'], '2');
                     $currentStep = 2;
                 } else {
@@ -273,7 +272,7 @@
                         }
                     }
                     array_push($insert, array('amount_donated'=>$_SESSION['amount'] ? 1 : 0));
-                    // array_push($insert, array('real_amount'=>$_SESSION['amount'] ? 1 : 0));
+                    array_push($insert, array('real_amount'=>$_SESSION['amount'] ? 1 : 0));
                     array_push($insert, array('isCompany'=>$_SESSION['isCompany'] ? 1 : 0));
                     array_push($insert, array('isAnonymous'=>0));
                     array_push($insert, array('isCash'=>$_SESSION['isCash'] ? 1 : 0));
@@ -358,7 +357,7 @@
 
     <main>
         <form action="./form.php" method="POST">
-            <?php print_r($_SESSION) ?>
+            <?php // print_r($_SESSION) ?>
             <?php if ($currentStep == 1) : ?>
             <div class="form-element">
                 <h3>Type de l'entrée :</h3>
@@ -427,7 +426,6 @@
 
             <?php 
                 if ($currentStep == 5 && $_SESSION['isCompany'] == true) :
-                    echo 'yes';
             ?>
             <div class="form-element">
                 <h3>Dénomination sociale</h3>
