@@ -3,7 +3,7 @@
         session_start();
     }
 
-    require('../../db_config.php');
+    // require('../../db_config.php');
 
     function createErrorMessage($errorText) {
         echo "
@@ -17,13 +17,15 @@
         ";
     }
 
-    if (!isset($_SESSION['step'])){
-        $_SESSION['step'] = 1;
+    if (!isset($_SESSION['steps'])){
+        $_SESSION['steps'] = array(1);
     }
+    $currentStep = end($_SESSION['steps']);
+
 
     if (isset($_POST['submit'])){
         if ($_POST['submit'] == 'Valider'){
-            if ($_SESSION['step'] == 1){
+            if ($currentStep == 1){
                 if (isset($_POST['type'])){
                     if ($_POST['type'] == 'don'){
                         $_SESSION['isDonSimple'] = true;
@@ -32,26 +34,30 @@
                         $_SESSION['isDonSimple'] = true;
                         $_SESSION['isVente'] = true;
                     }
-                    $_SESSION['step'] = 2;
+                    echo 'yes';
+                    array_push($_SESSION['steps'], '2');
+                    $currentStep = 2;
                 } else {
                     createErrorMessage("Veuillez sélectionner le type de l'entrée.");
                 }
-            } elseif ($_SESSION['step'] == 2){
+            } elseif ($currentStep == 2){
                 if (isset($_POST['moyen'])){
                     if ($_POST['moyen'] == 'cash'){
                         $_SESSION['isCash'] = true;
                         $_SESSION['isCheque'] = false;
                         $_SESSION['isCompany'] = false;
-                        $_SESSION['step'] = 7;
+                        array_push($_SESSION['steps'], 7);
+                        $currentStep = 7;
                     } elseif ($_POST['moyen'] == 'cheque'){
                         $_SESSION['isCash'] = false;
                         $_SESSION['isCheque'] = true;
-                        $_SESSION['step'] = 3;
+                        array_push($_SESSION['steps'], 3);
+                        $currentStep = 3;
                     }
                 } else {
                     createErrorMessage("Veuillez sélectionner le moyen de paiement.");
                 }
-            } elseif ($_SESSION['step'] == 3){
+            } elseif ($currentStep == 3){
                 $showedError = false;
                 if ($_POST['address'] !== ''){
                     if (preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 œ_\-,']*$/", $_POST['address'])){
@@ -85,18 +91,18 @@
                     }
                 }
                 if ($showedError == false){
-                    $_SESSION['step'] = 4;
+                    array_push($_SESSION['steps'], 4);
                 }
 
-            } elseif ($_SESSION['step'] == 4){
+            } elseif ($currentStep == 4){
                 if (isset($_POST['isCompany'])){
                     $_SESSION['isCompany'] = $_POST['isCompany'] == 'true' ? true : false;
-                    $_SESSION['step'] = 5;
+                    array_push($_SESSION['steps'], 5);
                 } else {
                     createErrorMessage("Veuillez renseigner le type de titulaire");
                 }
             
-            } elseif ($_SESSION['step'] == 5){
+            } elseif ($currentStep == 5){
                 $showedError = false;
                 if ($_SESSION['isCompany'] == true){
                     if ($_POST['name'] !== ''){
@@ -142,10 +148,10 @@
                     }
                 }
                 if ($showedError == false){
-                    $_SESSION['step'] = 6;
+                    array_push($_SESSION['steps'], 6);
                 }
             
-            } elseif ($_SESSION['step'] == 6){
+            } elseif ($currentStep == 6){
                 $showedError = false;
                 if ($_POST['email'] !== ''){
                     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
@@ -164,9 +170,9 @@
                     }
                 }
                 if ($showedError == false){
-                    $_SESSION['step'] = 7;
+                    array_push($_SESSION['steps'], 7);
                 }
-            } elseif ($_SESSION['step'] == 7){
+            } elseif ($currentStep == 7){
                 $showedError = false;
                 if (isset($_POST['amount']) && $_POST['amount'] != null){
                     $amount = $_POST['amount'];
@@ -309,11 +315,15 @@
                     unset($_SESSION[$key]);
                 }
             }
-            $_SESSION['step'] = 1;
+            $_SESSION['steps'] = array(1);
+            $currentStep = 1;
         } elseif ($_POST['submit'] == "Retour"){
-            $_SESSION['step'] = $_SESSION['step'] - 1;
+            array_pop($_SESSION['steps']);
+            $currentStep = end($_SESSION['steps']);
         }
     }
+
+    $currentStep = end($_SESSION['steps']);
 
 ?>
 
@@ -337,7 +347,7 @@
     <main>
         <form action="./form.php" method="POST">
             <?php print_r($_SESSION) ?>
-            <?php if ($_SESSION['step'] == 1) : ?>
+            <?php if ($currentStep == 1) : ?>
             <div class="form-element">
                 <h3>Type de l'entrée :</h3>
                 <div class="input-wrapper">
@@ -348,7 +358,7 @@
 
             <?php endif ?>
 
-            <?php if ($_SESSION['step'] == 2) : ?>
+            <?php if ($currentStep == 2) : ?>
             <div class="form-element">
                 <h3>Moyen de paiement :</h3>
                 <div class="input-wrapper">
@@ -358,7 +368,7 @@
             </div>
             <?php endif ?>
 
-            <?php if ($_SESSION['step'] == 3) : ?>
+            <?php if ($currentStep == 3) : ?>
             <div class="form-element">
                 <h3>Adresse</h3>
                 <div class="input-wrapper">
@@ -393,7 +403,7 @@
             </div>
             <?php endif ?>
 
-            <?php if ($_SESSION['step'] == 4) : ?>
+            <?php if ($currentStep == 4) : ?>
             <div class="form-element">
                 <h3>Type de titulaire :</h3>
                 <div class="input-wrapper">
@@ -404,7 +414,7 @@
             <?php endif ?>
 
             <?php 
-                if ($_SESSION['step'] == 5 && $_SESSION['isCompany'] == true) :
+                if ($currentStep == 5 && $_SESSION['isCompany'] == true) :
                     echo 'yes';
             ?>
             <div class="form-element">
@@ -434,7 +444,7 @@
 
             <?php 
                 endif;
-                if ($_SESSION['step'] == 5 && $_SESSION['isCompany'] == false) :
+                if ($currentStep == 5 && $_SESSION['isCompany'] == false) :
             ?>
 
             <div class="form-element">
@@ -458,7 +468,7 @@
                 endif;
             ?>
 
-            <?php if ($_SESSION['step'] == 6) : ?>
+            <?php if ($currentStep == 6) : ?>
             <div class="form-element">
                 <h3>Email</h3>
                 <div class="input-wrapper">
@@ -477,7 +487,7 @@
             </div>
             <?php endif ?>
 
-            <?php if ($_SESSION['step'] == 7) : ?>
+            <?php if ($currentStep == 7) : ?>
             <div class="form-element">
                 <h3>Montant :</h3>
                 <div class="input-wrapper columnFlex">
