@@ -3,7 +3,7 @@
         session_start();
     }
 
-    // require('../../db_config.php');
+    require('../../db_config.php');
 
     function createErrorMessage($errorText) {
         echo "
@@ -297,8 +297,7 @@
                     if (!mysqli_query($conn, $sql)) {
                         echo 'Error in MySQL:' . mysqli_error($conn);
                     } else {
-                        // header('Location: ./success.php');
-                        echo "CONGRATS";
+                        array_push($_SESSION['steps'], '8');
                     }
                 } elseif ($showedError == false) {
                     createErrorMessage("Le montant diffère d'une case à l'autre.");
@@ -519,11 +518,24 @@
             </div>
             <?php endif ?>
 
+            <?php if ($currentStep != 8) : ?>
             <div class="button-field">
                 <input type="submit" name="submit" value="Effacer tout">
                 <input type="submit" name="submit" value="Retour">
                 <input type="submit" name="submit" value="Valider">
             </div>
+            <?php endif ?>
+
+            <?php if ($currentStep == 8) : ?>
+            <div id="final">
+                <div id="success">
+                    Le paiement a bien été enregistré !
+                </div>
+                <div id="exit">
+                    <button onclick="location.href = '../hub.php'">Retour à l'accueil</button>
+                </div>
+            </div>
+            <?php endif ?>
 
         </form>
     </main>
