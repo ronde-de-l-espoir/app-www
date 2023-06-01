@@ -1,0 +1,68 @@
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    function createErrorMessage($errorText) {
+        echo "
+            <div id='error-msg-wrapper'>
+                <div id='error-msg'>
+                    <img src='../img/close-icon.png' alt='close'>
+                    <h3>Erreur :</h3>
+                    <p>$errorText</p>
+                </div> 
+            </div>
+        ";
+    }
+
+    if (isset($_POST['submit'])) {
+        if (isset($_POST['totalDistance']) && $_POST['minuteTime'] != '' && $_POST['secondTime'] != '' && $_POST['hourTime'] != '') {
+            $distanceRowed = (1000000 - $_POST['totalDistance']) / 4;
+            $timeInMinutes = $_POST['minuteTime'] + ($_POST['secondTime'] /60) + ($_POST['hourTime'] * 60);
+            $instantVelocity = $distanceRowed / $timeInMinutes;
+            $average = 500 / $instantVelocity;
+            $averageMinutes = floor($average);
+            $averageDec = $average - $averageMinutes;
+            $averageSeconds = round($averageDec * 60);
+        }
+    }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../root.css">
+    <title>Estimation ERGO</title>
+</head>
+<body>
+    
+    <header>
+        <h2>Estimation pour l'Ergo</h2>
+    </header>
+
+    <main>
+        <form action="./index.php" method="POST">
+            <input type="number" name="totalDistance" placeholder="Rentrez la distance restante ici" min="1" max="1000000" id="meter-input"> <!-- En mètres -->
+            <div class="time-inputs">
+                <input type="number" name="hourTime" placeholder="Heures" min="0" max="1000000000" class="timeInput"> <!-- Temps en heures-->
+                <input type="number" name="minuteTime" placeholder="Minutes" min="0" max="1000000000" class="timeInput"> <!-- Temps en minutes-->
+                <input type="number" name="secondTime" placeholder="Secondes" min="1" max="1000000000" class="timeInput"> <!-- Temps en secondes -->
+            </div>
+            <input type="submit" name="submit" value="Estimer">
+        </form>
+        
+        <?php if (isset($averageMinutes)) : ?>
+        <div class="result-section">
+            <h5>Le temps moyen par 500m est de :</h5>
+            <h3><span class="minutes"><?php echo $averageMinutes ?></span>'<span class="seconds"><?php echo $averageSeconds ?></span>"</h3>
+        </div>
+        <?php endif; ?>
+    </main>
+
+</body>
+</html>
