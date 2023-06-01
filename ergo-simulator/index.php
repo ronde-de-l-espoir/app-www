@@ -50,9 +50,9 @@
         <form action="./index.php" method="POST">
             <input type="number" name="totalDistance" placeholder="Rentrez la distance restante ici" min="1" max="1000000" id="meter-input"> <!-- En mètres -->
             <div class="time-inputs">
-                <input type="number" name="hourTime" placeholder="Heures" min="0" max="1000000000" class="timeInput"> <!-- Temps en heures-->
-                <input type="number" name="minuteTime" placeholder="Minutes" min="0" max="1000000000" class="timeInput"> <!-- Temps en minutes-->
-                <input type="number" name="secondTime" placeholder="Secondes" min="1" max="1000000000" class="timeInput"> <!-- Temps en secondes -->
+                <input type="number" name="hourTime" placeholder="HH" min="0" max="1000000000" class="timeInput"> <!-- Temps en heures-->
+                <input type="number" name="minuteTime" placeholder="MM" min="0" max="1000000000" class="timeInput"> <!-- Temps en minutes-->
+                <input type="number" name="secondTime" placeholder="SS" min="0" max="1000000000" class="timeInput"> <!-- Temps en secondes -->
             </div>
             <input type="submit" name="submit" value="Estimer">
         </form>
