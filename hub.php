@@ -76,6 +76,14 @@
             </div>
         </div>
 
+        <div class="option" data-link="ergo-simulator/">
+            <img src="./img/test-icon.png" alt="icon">
+            <div class="option-text">
+                <h3>Estimation pour l'Ergo</h3>
+                <p class="explanation">Détermine le temps moyen par 500m.</p>
+            </div>
+        </div>
+
     </main>
 
     <div class="sign-out" onclick="window.location = './reinit.php'">
