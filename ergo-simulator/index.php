@@ -3,6 +3,11 @@
         session_start();
     }
 
+    $distance = isset($_POST['totalDistance']) ? $_POST['totalDistance'] : "";
+    $hourTime = isset($_POST['hourTime']) ? $_POST['hourTime'] : "";
+    $minuteTime = isset($_POST['minuteTime']) ? $_POST['minuteTime'] : "";
+    $secondTime = isset($_POST['secondTime']) ? $_POST['secondTime'] : "";
+
     function createErrorMessage($errorText) {
         echo "
             <div id='error-msg-wrapper'>
@@ -48,11 +53,11 @@
 
     <main>
         <form action="./index.php" method="POST">
-            <input type="number" name="totalDistance" placeholder="Rentrez la distance restante ici" min="1" max="1000000" id="meter-input"> <!-- En mètres -->
+            <input type="number" name="totalDistance" value="<?php echo $distance ?>" placeholder="Rentrez la distance restante ici" min="1" max="1000000" id="meter-input"> <!-- En mètres -->
             <div class="time-inputs">
-                <input type="number" name="hourTime" placeholder="HH" min="0" max="1000000000" class="timeInput"> <!-- Temps en heures-->
-                <input type="number" name="minuteTime" placeholder="MM" min="0" max="1000000000" class="timeInput"> <!-- Temps en minutes-->
-                <input type="number" name="secondTime" placeholder="SS" min="0" max="1000000000" class="timeInput"> <!-- Temps en secondes -->
+                <input type="number" value="<?php echo $hourTime ?>" name="hourTime" placeholder="HH" min="0" max="1000000000" class="timeInput"> <!-- Temps en heures-->
+                <input type="number" value="<?php echo $minuteTime ?>" name="minuteTime" placeholder="MM" min="0" max="1000000000" class="timeInput"> <!-- Temps en minutes-->
+                <input type="number" value="<?php echo $secondTime ?>" name="secondTime" placeholder="SS" min="0" max="1000000000" class="timeInput"> <!-- Temps en secondes -->
             </div>
             <input type="submit" name="submit" value="Estimer">
         </form>
