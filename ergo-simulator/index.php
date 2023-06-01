@@ -23,7 +23,8 @@
             $average = 500 / $instantVelocity;
             $averageMinutes = floor($average);
             $averageDec = $average - $averageMinutes;
-            $averageSeconds = round($averageDec * 60);
+            $averageSeconds = floor($averageDec * 60);
+            $averageCent = round((($averageDec * 60) - $averageSeconds) * 100);
         }
     }
 
@@ -59,7 +60,7 @@
         <?php if (isset($averageMinutes)) : ?>
         <div class="result-section">
             <h5>Le temps moyen par 500m est de :</h5>
-            <h3><span class="minutes"><?php echo $averageMinutes ?></span>'<span class="seconds"><?php echo $averageSeconds ?></span>"</h3>
+            <h3><span class="minutes"><?php echo $averageMinutes ?></span>'<span class="seconds"><?php echo $averageSeconds ?></span>"<span class="cents"><?php echo $averageCent ?></span></h3>
         </div>
         <?php endif; ?>
     </main>
