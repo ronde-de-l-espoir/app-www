@@ -14,34 +14,15 @@
         <h2>Scanner un code</h2>
     </header>
 
+    <p>Veuillez pointer votre appareil vers un QR code</p>
     <div class="reader-wrapper">
-        <div id="reader" width="600px"></div>
+        <video id="reader" width="600px" height="600px"></video>
     </div>
 
     <div id="result"></div>
 
-    <!-- <script src="./html5-qrcode.min.js" type="text/javascript"></script> -->
-    <script src="../../lib/qrcode/html5-qrcode.min.js" type="text/javascript"></script>
-    <script>
-        function onScanSuccess(decodedText, decodedResult) {
-            // handle the scanned code as you like, for example:
-            console.log(`Code matched = ${decodedText}`, decodedResult);
-            document.getElementById('result').innerText = decodedText;
-            window.location = `../informations/informations.php?id=${decodedText}`
-        }
-        
-        function onScanFailure(error) {
-            // handle scan failure, usually better to ignore and keep scanning.
-            // for example:
-                console.warn(`Code scan error = ${error}`);
-        }
-
-        let html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader",
-            { fps: 10, qrbox: {width: 250, height: 250} },
-            /* verbose= */ false);
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-    </script>
+    <script src='../../lib/qrcode/qr-scanner.umd.min.js' type="text/javascript"></script>
+    <script src="./scanner.js"></script>
 
 </body>
 </html>
