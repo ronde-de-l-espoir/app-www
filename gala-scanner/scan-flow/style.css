@@ -32,10 +32,10 @@ header {
 }
 
 #reader {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     border: none !important;
     border-radius: 5px;
     width: 100%;

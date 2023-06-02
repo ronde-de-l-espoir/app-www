@@ -14,9 +14,10 @@
         <h2>Scanner un code</h2>
     </header>
 
-    <p>Veuillez pointer votre appareil vers un QR code</p>
+    
     <div class="reader-wrapper">
-        <video id="reader" width="600px" height="600px"></video>
+        <p>Veuillez pointer votre appareil vers un QR code</p>
+        <video id="reader"></video>
     </div>
 
     <div id="result"></div>
